@@ -1,0 +1,22 @@
+E
+======================================================================
+ERROR: reservaciones.tests.test_modelos (unittest.loader._FailedTest.reservaciones.tests.test_modelos)
+----------------------------------------------------------------------
+ImportError: Failed to import test module: reservaciones.tests.test_modelos
+Traceback (most recent call last):
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.13_3.13.3824.0_x64__qbz5n2kfra8p0\Lib\unittest\loader.py", line 396, in _find_test_path
+    module = self._get_module_from_name(name)
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.13_3.13.3824.0_x64__qbz5n2kfra8p0\Lib\unittest\loader.py", line 339, in _get_module_from_name
+    __import__(name)
+    ~~~~~~~~~~^^^^^^
+  File "C:\Users\DELL G3\Desktop\Reservacion_Salas_Estudio\reservaciones\tests\test_modelos.py", line 8, in <module>
+    from reservaciones.models import Reservacion, Sala
+ImportError: cannot import name 'Reservacion' from 'reservaciones.models' (C:\Users\DELL G3\Desktop\Reservacion_Salas_Estudio\reservaciones\models.py)
+
+
+----------------------------------------------------------------------
+Ran 1 test in 0.000s
+
+FAILED (errors=1)
+Found 1 test(s).
+System check identified no issues (0 silenced).
