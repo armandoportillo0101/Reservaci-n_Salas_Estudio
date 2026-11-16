@@ -10,6 +10,7 @@ from reservaciones.services.disponibilidad import (
     existe_traslape,
     verificar_disponibilidad,
 )
+from reservaciones.services.reservaciones import crear_reservacion
 
 User = get_user_model()
 
@@ -130,3 +131,338 @@ class DisponibilidadServiceTests(TestCase):
                 self.sala_a, self.fecha, time(10, 0), time(11, 0)
             )
         )
+
+
+class CrearReservacionServiceTests(TestCase):
+    """Pruebas unitarias de crear_reservacion (UT-01 a UT-10 y límites)."""
+
+    def setUp(self):
+        """Configura usuario, salas activas/inactivas y fecha de referencia."""
+        self.usuario = User.objects.create_user(
+            username="estudiante_srv",
+            password="password123",
+        )
+        self.sala_a = Sala.objects.create(
+            nombre="Sala A",
+            ubicacion="Planta baja",
+            capacidad=4,
+            activa=True,
+        )
+        self.sala_b = Sala.objects.create(
+            nombre="Sala B",
+            ubicacion="Planta baja",
+            capacidad=8,
+            activa=True,
+        )
+        self.sala_inactiva = Sala.objects.create(
+            nombre="Sala de mantenimiento",
+            ubicacion="Planta alta",
+            capacidad=6,
+            activa=False,
+        )
+        self.hoy = date(2026, 11, 16)
+        self.fecha_futura = date(2026, 11, 20)
+
+    def test_ut01_reservacion_valida_queda_vigente_y_capacidad_exacta(self):
+        """UT-01: reservación válida queda VIGENTE; permite fecha hoy y cap exacta."""
+        reservacion = crear_reservacion(
+            usuario=self.usuario,
+            sala=self.sala_a,
+            fecha=self.hoy,
+            hora_inicio=time(10, 0),
+            hora_fin=time(11, 0),
+            asistentes=4,
+            proposito="  Estudio grupal de cálculo diferencial  ",
+            hoy=self.hoy,
+        )
+        self.assertEqual(reservacion.estado, Reservacion.Estado.VIGENTE)
+        self.assertEqual(reservacion.asistentes, 4)
+        self.assertEqual(
+            reservacion.proposito, "Estudio grupal de cálculo diferencial"
+        )
+        self.assertEqual(Reservacion.objects.count(), 1)
+
+    def test_ut04_asistentes_mayores_a_capacidad_no_registra(self):
+        """UT-04: asistentes > capacidad lanza excepción y no registra."""
+        with self.assertRaises(exceptions.CapacidadExcedidaError) as ctx:
+            crear_reservacion(
+                usuario=self.usuario,
+                sala=self.sala_a,
+                fecha=self.fecha_futura,
+                hora_inicio=time(10, 0),
+                hora_fin=time(11, 0),
+                asistentes=5,
+                proposito="Estudio grupal excediendo capacidad",
+                hoy=self.hoy,
+            )
+        self.assertEqual(str(ctx.exception), messages.MSG_CAPACIDAD_EXCEDIDA)
+        self.assertEqual(Reservacion.objects.count(), 0)
+
+    def test_ut07_duracion_limites_29_30_120_121(self):
+        """UT-07: rechaza 29 y 121 min; acepta 30 y 120 min."""
+        for fin_invalido in (time(10, 29), time(12, 1)):
+            with self.assertRaises(exceptions.DuracionInvalidaError) as ctx:
+                crear_reservacion(
+                    usuario=self.usuario,
+                    sala=self.sala_a,
+                    fecha=self.fecha_futura,
+                    hora_inicio=time(10, 0),
+                    hora_fin=fin_invalido,
+                    asistentes=2,
+                    proposito="Propósito válido para prueba de duración",
+                    hoy=self.hoy,
+                )
+            self.assertEqual(
+                str(ctx.exception), messages.MSG_DURACION_INVALIDA
+            )
+        self.assertEqual(Reservacion.objects.count(), 0)
+
+        r30 = crear_reservacion(
+            usuario=self.usuario,
+            sala=self.sala_a,
+            fecha=self.fecha_futura,
+            hora_inicio=time(8, 0),
+            hora_fin=time(8, 30),
+            asistentes=2,
+            proposito="Duración mínima exacta de treinta minutos",
+            hoy=self.hoy,
+        )
+        r120 = crear_reservacion(
+            usuario=self.usuario,
+            sala=self.sala_a,
+            fecha=self.fecha_futura,
+            hora_inicio=time(18, 0),
+            hora_fin=time(20, 0),
+            asistentes=2,
+            proposito="Duración máxima exacta de dos horas completas",
+            hoy=self.hoy,
+        )
+        self.assertEqual(r30.estado, Reservacion.Estado.VIGENTE)
+        self.assertEqual(r120.estado, Reservacion.Estado.VIGENTE)
+
+    def test_ut08_traslape_parcial_contenido_y_total_rechazados(self):
+        """UT-08: rechaza traslape parcial, contenido y total en misma sala."""
+        crear_reservacion(
+            usuario=self.usuario,
+            sala=self.sala_a,
+            fecha=self.fecha_futura,
+            hora_inicio=time(10, 0),
+            hora_fin=time(11, 0),
+            asistentes=2,
+            proposito="Reservación inicial de diez a once",
+            hoy=self.hoy,
+        )
+        intervalos_traslapados = (
+            (time(10, 30), time(11, 30)),
+            (time(9, 30), time(10, 30)),
+            (time(10, 15), time(10, 45)),
+            (time(9, 30), time(11, 30)),
+            (time(10, 0), time(11, 0)),
+        )
+        for inicio, fin in intervalos_traslapados:
+            with self.assertRaises(exceptions.TraslapeReservacionError) as ctx:
+                crear_reservacion(
+                    usuario=self.usuario,
+                    sala=self.sala_a,
+                    fecha=self.fecha_futura,
+                    hora_inicio=inicio,
+                    hora_fin=fin,
+                    asistentes=2,
+                    proposito="Intento de reservación con traslape",
+                    hoy=self.hoy,
+                )
+            self.assertEqual(str(ctx.exception), messages.MSG_TRASLAPE)
+        self.assertEqual(Reservacion.objects.count(), 1)
+
+    def test_ut09_horarios_adyacentes_y_otra_sala_en_mismo_horario(self):
+        """UT-09: 10:00-11:00 y 11:00-12:00 vigentes; otra sala permitida."""
+        r1 = crear_reservacion(
+            usuario=self.usuario,
+            sala=self.sala_a,
+            fecha=self.fecha_futura,
+            hora_inicio=time(10, 0),
+            hora_fin=time(11, 0),
+            asistentes=2,
+            proposito="Primera reservación de diez a once",
+            hoy=self.hoy,
+        )
+        r2 = crear_reservacion(
+            usuario=self.usuario,
+            sala=self.sala_a,
+            fecha=self.fecha_futura,
+            hora_inicio=time(11, 0),
+            hora_fin=time(12, 0),
+            asistentes=2,
+            proposito="Segunda reservación adyacente once a doce",
+            hoy=self.hoy,
+        )
+        r_otra_sala = crear_reservacion(
+            usuario=self.usuario,
+            sala=self.sala_b,
+            fecha=self.fecha_futura,
+            hora_inicio=time(10, 0),
+            hora_fin=time(11, 0),
+            asistentes=2,
+            proposito="Reservación en otra sala mismo horario",
+            hoy=self.hoy,
+        )
+        self.assertEqual(r1.estado, Reservacion.Estado.VIGENTE)
+        self.assertEqual(r2.estado, Reservacion.Estado.VIGENTE)
+        self.assertEqual(r_otra_sala.estado, Reservacion.Estado.VIGENTE)
+
+    def test_ut10_reservacion_cancelada_no_bloquea_nueva(self):
+        """UT-10: una reservación CANCELADA permite registrar otra igual."""
+        cancelada = crear_reservacion(
+            usuario=self.usuario,
+            sala=self.sala_a,
+            fecha=self.fecha_futura,
+            hora_inicio=time(10, 0),
+            hora_fin=time(11, 0),
+            asistentes=2,
+            proposito="Reservación que será cancelada pronto",
+            hoy=self.hoy,
+        )
+        cancelada.estado = Reservacion.Estado.CANCELADA
+        cancelada.save()
+
+        nueva = crear_reservacion(
+            usuario=self.usuario,
+            sala=self.sala_a,
+            fecha=self.fecha_futura,
+            hora_inicio=time(10, 0),
+            hora_fin=time(11, 0),
+            asistentes=3,
+            proposito="Nueva reservación en horario liberado",
+            hoy=self.hoy,
+        )
+        self.assertEqual(nueva.estado, Reservacion.Estado.VIGENTE)
+        self.assertEqual(
+            Reservacion.objects.filter(
+                estado=Reservacion.Estado.VIGENTE
+            ).count(),
+            1,
+        )
+
+    def test_casos_adicionales_sala_inexistente_inactiva_y_limites(self):
+        """Tarea 15: sala inexistente/inactiva, límites de hora, fecha y campos."""
+        # Sala None o ID inexistente
+        for sala_invalida in (None, 99999, Sala(id=99999, nombre="Fantasma")):
+            with self.assertRaises(exceptions.SalaInexistenteError) as ctx:
+                crear_reservacion(
+                    usuario=self.usuario,
+                    sala=sala_invalida,
+                    fecha=self.fecha_futura,
+                    hora_inicio=time(10, 0),
+                    hora_fin=time(11, 0),
+                    asistentes=2,
+                    proposito="Propósito válido de diez o más caracteres",
+                    hoy=self.hoy,
+                )
+            self.assertEqual(str(ctx.exception), messages.MSG_SALA_INACTIVA)
+
+        # Sala inactiva (pasando instancia o ID entero)
+        for ref_inactiva in (self.sala_inactiva, self.sala_inactiva.id):
+            with self.assertRaises(exceptions.SalaInactivaError) as ctx:
+                crear_reservacion(
+                    usuario=self.usuario,
+                    sala=ref_inactiva,
+                    fecha=self.fecha_futura,
+                    hora_inicio=time(10, 0),
+                    hora_fin=time(11, 0),
+                    asistentes=2,
+                    proposito="Propósito válido de diez o más caracteres",
+                    hoy=self.hoy,
+                )
+            self.assertEqual(str(ctx.exception), messages.MSG_SALA_INACTIVA)
+
+        # Fecha pasada
+        with self.assertRaises(exceptions.FechaPasadaError):
+            crear_reservacion(
+                usuario=self.usuario,
+                sala=self.sala_a,
+                fecha=date(2026, 11, 15),
+                hora_inicio=time(10, 0),
+                hora_fin=time(11, 0),
+                asistentes=2,
+                proposito="Propósito válido de diez o más caracteres",
+                hoy=self.hoy,
+            )
+
+        # Límites de hora: 07:59, 19:01, misma hora de inicio, 20:01, y 19:00-20:00 válido
+        for inicio_inv in (time(7, 59), time(19, 1)):
+            with self.assertRaises(exceptions.HoraInicioFueraDeRangoError):
+                crear_reservacion(
+                    usuario=self.usuario,
+                    sala=self.sala_a,
+                    fecha=self.fecha_futura,
+                    hora_inicio=inicio_inv,
+                    hora_fin=time(19, 45),
+                    asistentes=2,
+                    proposito="Propósito válido de diez o más caracteres",
+                    hoy=self.hoy,
+                )
+
+        with self.assertRaises(exceptions.HoraFinNoPosteriorError):
+            crear_reservacion(
+                usuario=self.usuario,
+                sala=self.sala_a,
+                fecha=self.fecha_futura,
+                hora_inicio=time(10, 0),
+                hora_fin=time(10, 0),
+                asistentes=2,
+                proposito="Propósito válido de diez o más caracteres",
+                hoy=self.hoy,
+            )
+
+        with self.assertRaises(exceptions.HoraFinFueraDeRangoError):
+            crear_reservacion(
+                usuario=self.usuario,
+                sala=self.sala_a,
+                fecha=self.fecha_futura,
+                hora_inicio=time(19, 0),
+                hora_fin=time(20, 1),
+                asistentes=2,
+                proposito="Propósito válido de diez o más caracteres",
+                hoy=self.hoy,
+            )
+
+        # Asistentes 0 y negativos
+        for asist_inv in (0, -2):
+            with self.assertRaises(exceptions.AsistentesInvalidosError):
+                crear_reservacion(
+                    usuario=self.usuario,
+                    sala=self.sala_a,
+                    fecha=self.fecha_futura,
+                    hora_inicio=time(10, 0),
+                    hora_fin=time(11, 0),
+                    asistentes=asist_inv,
+                    proposito="Propósito válido de diez o más caracteres",
+                    hoy=self.hoy,
+                )
+
+        # Propósito inválido
+        with self.assertRaises(exceptions.PropositoInvalidoError):
+            crear_reservacion(
+                usuario=self.usuario,
+                sala=self.sala_a,
+                fecha=self.fecha_futura,
+                hora_inicio=time(10, 0),
+                hora_fin=time(11, 0),
+                asistentes=2,
+                proposito="corto",
+                hoy=self.hoy,
+            )
+
+        # Límite válido 19:00 a 20:00 pasando sala por ID
+        r_limite = crear_reservacion(
+            usuario=self.usuario,
+            sala=self.sala_a.id,
+            fecha=self.fecha_futura,
+            hora_inicio=time(19, 0),
+            hora_fin=time(20, 0),
+            asistentes=2,
+            proposito="Reservación en el último horario permitido",
+            hoy=self.hoy,
+        )
+        self.assertEqual(r_limite.estado, Reservacion.Estado.VIGENTE)
+

@@ -1,0 +1,19 @@
+Creating test database for alias 'default' ('C:\Users\DELL G3\Desktop\Reservacion_Salas_Estudio\test_db.sqlite3')...
+Found 16 test(s).
+reservaciones.tests.test_servicios (unittest.loader._FailedTest.reservaciones.tests.test_servicios) ... ERROR
+
+======================================================================
+ERROR: reservaciones.tests.test_servicios (unittest.loader._FailedTest.reservaciones.tests.test_servicios)
+----------------------------------------------------------------------
+ImportError: Failed to import test module: reservaciones.tests.test_servicios
+Traceback (most recent call last):
+  File "C:\Users\DELL G3\Desktop\Reservacion_Salas_Estudio\reservaciones\tests\test_servicios.py", line 13, in <module>
+    from reservaciones.services.reservaciones import crear_reservacion
+ImportError: cannot import name 'crear_reservacion' from 'reservaciones.services.reservaciones' (C:\Users\DELL G3\Desktop\Reservacion_Salas_Estudio\reservaciones\services\reservaciones.py)
+
+----------------------------------------------------------------------
+Ran 16 tests in 4.523s
+
+FAILED (errors=1)
+Destroying test database for alias 'default' ('C:\Users\DELL G3\Desktop\Reservacion_Salas_Estudio\test_db.sqlite3')...
+System check identified no issues (0 silenced).
