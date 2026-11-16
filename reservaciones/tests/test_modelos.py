@@ -1,7 +1,9 @@
 """Pruebas unitarias de modelos de dominio Sala y Reservacion."""
 from datetime import date, time
+from io import StringIO
 
 from django.contrib.auth import get_user_model
+from django.core.management import call_command
 from django.db import IntegrityError, transaction
 from django.test import TestCase
 
@@ -116,3 +118,28 @@ class ReservacionModelTests(TestCase):
                     proposito="Propósito válido de prueba",
                     estado="ELIMINADA",
                 )
+
+
+class CargarSalasCommandTests(TestCase):
+    """Pruebas del comando idempotente cargar_salas para datos iniciales."""
+
+    def test_cargar_salas_crea_las_cuatro_salas_exactas_y_es_idempotente(self):
+        """Verifica las 4 salas iniciales, mantenimiento inactiva e idempotencia."""
+        salida = StringIO()
+        call_command("cargar_salas", stdout=salida)
+        call_command("cargar_salas", stdout=salida)
+
+        self.assertEqual(Sala.objects.count(), 4)
+
+        esperadas = {
+            "Sala A": ("Biblioteca, planta baja", 4, True),
+            "Sala B": ("Biblioteca, planta baja", 8, True),
+            "Sala C": ("Biblioteca, planta alta", 12, True),
+            "Sala de mantenimiento": ("Biblioteca, planta alta", 6, False),
+        }
+        for nombre, (ubicacion, capacidad, activa) in esperadas.items():
+            sala = Sala.objects.get(nombre=nombre)
+            self.assertEqual(sala.ubicacion, ubicacion)
+            self.assertEqual(sala.capacidad, capacidad)
+            self.assertEqual(sala.activa, activa)
+
