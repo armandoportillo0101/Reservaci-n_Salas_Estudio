@@ -1,0 +1,22 @@
+Creating test database for alias 'default' ('C:\Users\DELL G3\Desktop\Reservacion_Salas_Estudio\test_db.sqlite3')...
+Found 31 test(s).
+test_get_autenticado_muestra_formulario_con_ids_estables_y_csrf (reservaciones.tests.test_vistas.NuevaReservacionViewTests.test_get_autenticado_muestra_formulario_con_ids_estables_y_csrf) ... ERROR
+test_post_error_negocio_no_registra_muestra_mensaje_y_conserva_datos (reservaciones.tests.test_vistas.NuevaReservacionViewTests.test_post_error_negocio_no_registra_muestra_mensaje_y_conserva_datos) ... ERROR
+test_post_formato_invalido_no_registra_y_conserva_datos (reservaciones.tests.test_vistas.NuevaReservacionViewTests.test_post_formato_invalido_no_registra_y_conserva_datos) ... ERROR
+test_ut11_acceso_anonimo_redirige_a_inicio_de_sesion (reservaciones.tests.test_vistas.NuevaReservacionViewTests.test_ut11_acceso_anonimo_redirige_a_inicio_de_sesion) ... ERROR
+test_ut12_post_valido_crea_reservacion_redirige_y_muestra_exito (reservaciones.tests.test_vistas.NuevaReservacionViewTests.test_ut12_post_valido_crea_reservacion_redirige_y_muestra_exito) ... ERROR
+
+======================================================================
+ERROR: test_ut11_acceso_anonimo_redirige_a_inicio_de_sesion (reservaciones.tests.test_vistas.NuevaReservacionViewTests.test_ut11_acceso_anonimo_redirige_a_inicio_de_sesion)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\DELL G3\Desktop\Reservacion_Salas_Estudio\reservaciones\tests\test_vistas.py", line 35, in setUp
+    self.url_nueva = reverse("reservaciones:nueva")
+django.urls.exceptions.NoReverseMatch: Reverse for 'nueva' not found. 'nueva' is not a valid view function or pattern name.
+
+----------------------------------------------------------------------
+Ran 31 tests in 22.813s
+
+FAILED (errors=5)
+Destroying test database for alias 'default' ('C:\Users\DELL G3\Desktop\Reservacion_Salas_Estudio\test_db.sqlite3')...
+System check identified no issues (0 silenced).
