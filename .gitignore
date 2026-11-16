@@ -1,0 +1,22 @@
+# Entornos virtuales
+venv/
+.venv/
+env/
+
+# Caché de Python
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Base de datos local
+db.sqlite3
+db.sqlite3-journal
+
+# Cobertura y reportes generados
+htmlcov/
+.coverage
+.coverage.*
+reportes/
+
+# Variables de entorno locales
+.env
