@@ -1,0 +1,40 @@
+Creating test database for alias 'default' ('C:\Users\DELL G3\Desktop\Reservacion_Salas_Estudio\test_db.sqlite3')...
+Found 31 test(s).
+test_cargar_salas_crea_las_cuatro_salas_exactas_y_es_idempotente (reservaciones.tests.test_modelos.CargarSalasCommandTests.test_cargar_salas_crea_las_cuatro_salas_exactas_y_es_idempotente) ... ok
+test_crear_reservacion_valores_por_defecto_y_estados (reservaciones.tests.test_modelos.ReservacionModelTests.test_crear_reservacion_valores_por_defecto_y_estados) ... ok
+test_restriccion_bd_asistentes_mayor_o_igual_a_uno (reservaciones.tests.test_modelos.ReservacionModelTests.test_restriccion_bd_asistentes_mayor_o_igual_a_uno) ... ok
+test_restriccion_bd_estado_valido (reservaciones.tests.test_modelos.ReservacionModelTests.test_restriccion_bd_estado_valido) ... ok
+test_restriccion_bd_hora_fin_mayor_a_hora_inicio (reservaciones.tests.test_modelos.ReservacionModelTests.test_restriccion_bd_hora_fin_mayor_a_hora_inicio) ... ok
+test_crear_sala_campos_y_representacion (reservaciones.tests.test_modelos.SalaModelTests.test_crear_sala_campos_y_representacion) ... ok
+test_restriccion_capacidad_positiva_en_sala (reservaciones.tests.test_modelos.SalaModelTests.test_restriccion_capacidad_positiva_en_sala) ... ok
+test_casos_adicionales_sala_inexistente_inactiva_y_limites (reservaciones.tests.test_servicios.CrearReservacionServiceTests.test_casos_adicionales_sala_inexistente_inactiva_y_limites) ... ok
+test_ut01_reservacion_valida_queda_vigente_y_capacidad_exacta (reservaciones.tests.test_servicios.CrearReservacionServiceTests.test_ut01_reservacion_valida_queda_vigente_y_capacidad_exacta) ... ok
+test_ut04_asistentes_mayores_a_capacidad_no_registra (reservaciones.tests.test_servicios.CrearReservacionServiceTests.test_ut04_asistentes_mayores_a_capacidad_no_registra) ... ok
+test_ut07_duracion_limites_29_30_120_121 (reservaciones.tests.test_servicios.CrearReservacionServiceTests.test_ut07_duracion_limites_29_30_120_121) ... ok
+test_ut08_traslape_parcial_contenido_y_total_rechazados (reservaciones.tests.test_servicios.CrearReservacionServiceTests.test_ut08_traslape_parcial_contenido_y_total_rechazados) ... ok
+test_ut09_horarios_adyacentes_y_otra_sala_en_mismo_horario (reservaciones.tests.test_servicios.CrearReservacionServiceTests.test_ut09_horarios_adyacentes_y_otra_sala_en_mismo_horario) ... ok
+test_ut10_reservacion_cancelada_no_bloquea_nueva (reservaciones.tests.test_servicios.CrearReservacionServiceTests.test_ut10_reservacion_cancelada_no_bloquea_nueva) ... ok
+test_detecta_traslape_parcial_contenido_y_total (reservaciones.tests.test_servicios.DisponibilidadServiceTests.test_detecta_traslape_parcial_contenido_y_total) ... ok
+test_horarios_adyacentes_no_se_traslapan (reservaciones.tests.test_servicios.DisponibilidadServiceTests.test_horarios_adyacentes_no_se_traslapan) ... ok
+test_ignora_reservaciones_canceladas_otra_sala_y_otra_fecha (reservaciones.tests.test_servicios.DisponibilidadServiceTests.test_ignora_reservaciones_canceladas_otra_sala_y_otra_fecha) ... ok
+test_validar_asistentes_y_capacidad (reservaciones.tests.test_validadores.ValidadoresCamposDominioTests.test_validar_asistentes_y_capacidad) ... ok
+test_validar_fecha_no_pasada_con_y_sin_inyeccion_de_hoy (reservaciones.tests.test_validadores.ValidadoresCamposDominioTests.test_validar_fecha_no_pasada_con_y_sin_inyeccion_de_hoy) ... ok
+test_validar_proposito_longitud_con_recorte_de_espacios (reservaciones.tests.test_validadores.ValidadoresCamposDominioTests.test_validar_proposito_longitud_con_recorte_de_espacios) ... ok
+test_validar_sala_activa_e_inexistente (reservaciones.tests.test_validadores.ValidadoresCamposDominioTests.test_validar_sala_activa_e_inexistente) ... ok
+test_get_autenticado_muestra_formulario_con_ids_estables_y_csrf (reservaciones.tests.test_vistas.NuevaReservacionViewTests.test_get_autenticado_muestra_formulario_con_ids_estables_y_csrf) ... ok
+test_post_error_negocio_no_registra_muestra_mensaje_y_conserva_datos (reservaciones.tests.test_vistas.NuevaReservacionViewTests.test_post_error_negocio_no_registra_muestra_mensaje_y_conserva_datos) ... ok
+test_post_formato_invalido_no_registra_y_conserva_datos (reservaciones.tests.test_vistas.NuevaReservacionViewTests.test_post_formato_invalido_no_registra_y_conserva_datos) ... ok
+test_ut11_acceso_anonimo_redirige_a_inicio_de_sesion (reservaciones.tests.test_vistas.NuevaReservacionViewTests.test_ut11_acceso_anonimo_redirige_a_inicio_de_sesion) ... ok
+test_ut12_post_valido_crea_reservacion_redirige_y_muestra_exito (reservaciones.tests.test_vistas.NuevaReservacionViewTests.test_ut12_post_valido_crea_reservacion_redirige_y_muestra_exito) ... ok
+test_it01_solicitudes_concurrentes_incompatibles_solo_una_vigente (reservaciones.tests.test_integracion.ConcurrenciaReservacionIntegrationTests.test_it01_solicitudes_concurrentes_incompatibles_solo_una_vigente) ... ok
+test_constantes_nombradas_definidas (reservaciones.tests.test_validadores.ValidadoresHorarioDuracionTests.test_constantes_nombradas_definidas) ... ok
+test_validar_duracion_limites_29_30_120_121 (reservaciones.tests.test_validadores.ValidadoresHorarioDuracionTests.test_validar_duracion_limites_29_30_120_121) ... ok
+test_validar_hora_fin_limites_y_orden (reservaciones.tests.test_validadores.ValidadoresHorarioDuracionTests.test_validar_hora_fin_limites_y_orden) ... ok
+test_validar_hora_inicio_limites_permitidos_y_rechazados (reservaciones.tests.test_validadores.ValidadoresHorarioDuracionTests.test_validar_hora_inicio_limites_permitidos_y_rechazados) ... ok
+
+----------------------------------------------------------------------
+Ran 31 tests in 24.716s
+
+OK
+Destroying test database for alias 'default' ('C:\Users\DELL G3\Desktop\Reservacion_Salas_Estudio\test_db.sqlite3')...
+System check identified no issues (0 silenced).

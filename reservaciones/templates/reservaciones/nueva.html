@@ -1,0 +1,60 @@
+<!-- # TEMPORAL: reemplazar por Persona 2 -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <title>Nueva Reservación</title>
+</head>
+<body>
+    <h1>Registrar Reservación de Sala</h1>
+
+    {% if messages %}
+    <ul class="messages">
+        {% for message in messages %}
+        <li>{{ message }}</li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+
+    {% if form.non_field_errors %}
+    <div class="errors">
+        {{ form.non_field_errors }}
+    </div>
+    {% endif %}
+
+    <form method="post" action="{% url 'reservaciones:nueva' %}" novalidate>
+        {% csrf_token %}
+        <div>
+            <label for="id_sala">Sala:</label>
+            {{ form.sala }}
+            {{ form.sala.errors }}
+        </div>
+        <div>
+            <label for="id_fecha">Fecha:</label>
+            {{ form.fecha }}
+            {{ form.fecha.errors }}
+        </div>
+        <div>
+            <label for="id_hora_inicio">Hora de inicio:</label>
+            {{ form.hora_inicio }}
+            {{ form.hora_inicio.errors }}
+        </div>
+        <div>
+            <label for="id_hora_fin">Hora de fin:</label>
+            {{ form.hora_fin }}
+            {{ form.hora_fin.errors }}
+        </div>
+        <div>
+            <label for="id_asistentes">Asistentes:</label>
+            {{ form.asistentes }}
+            {{ form.asistentes.errors }}
+        </div>
+        <div>
+            <label for="id_proposito">Propósito:</label>
+            {{ form.proposito }}
+            {{ form.proposito.errors }}
+        </div>
+        <button type="submit" id="id_enviar">Reservar</button>
+    </form>
+</body>
+</html>

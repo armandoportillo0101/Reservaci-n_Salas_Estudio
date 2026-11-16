@@ -1,0 +1,18 @@
+<!-- # TEMPORAL: reemplazar por Persona 2 -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <title>Mis Reservaciones</title>
+</head>
+<body>
+    <h1>Mis Reservaciones</h1>
+    {% if messages %}
+    <ul class="messages">
+        {% for message in messages %}
+        <li>{{ message }}</li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+</body>
+</html>
