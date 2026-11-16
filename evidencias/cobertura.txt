@@ -1,0 +1,27 @@
+Name                                                Stmts   Miss Branch BrPart  Cover   Missing
+-----------------------------------------------------------------------------------------------
+config\__init__.py                                      0      0      0      0   100%
+config\urls.py                                          3      0      0      0   100%
+reservaciones\__init__.py                               0      0      0      0   100%
+reservaciones\apps.py                                   4      0      0      0   100%
+reservaciones\exceptions.py                            27      0      0      0   100%
+reservaciones\forms.py                                  9      0      0      0   100%
+reservaciones\management\__init__.py                    0      0      0      0   100%
+reservaciones\management\commands\__init__.py           0      0      0      0   100%
+reservaciones\management\commands\cargar_salas.py       9      0      2      0   100%
+reservaciones\messages.py                              22      0      0      0   100%
+reservaciones\models.py                                31      0      0      0   100%
+reservaciones\services\__init__.py                      0      0      0      0   100%
+reservaciones\services\disponibilidad.py               11      0      4      0   100%
+reservaciones\services\reservaciones.py                22      0      2      0   100%
+reservaciones\tests\__init__.py                         0      0      0      0   100%
+reservaciones\tests\test_integracion.py                49      0      0      0   100%
+reservaciones\tests\test_modelos.py                    57      0      2      0   100%
+reservaciones\tests\test_servicios.py                 111      0     12      0   100%
+reservaciones\tests\test_validadores.py                80      0      4      0   100%
+reservaciones\tests\test_vistas.py                     54      0      2      0   100%
+reservaciones\urls.py                                   4      0      0      0   100%
+reservaciones\validators.py                            49      0     20      0   100%
+reservaciones\views.py                                 28      0      4      0   100%
+-----------------------------------------------------------------------------------------------
+TOTAL                                                 570      0     52      0   100%

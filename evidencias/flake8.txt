@@ -1,0 +1,3 @@
+Comando: flake8 . --exclude=.venv,migrations
+Hallazgos: 0 (sin incumplimientos de PEP 8)
+Código de salida: 0
