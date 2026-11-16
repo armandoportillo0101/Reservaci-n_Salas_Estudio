@@ -10,7 +10,7 @@ from reservaciones.services.reservaciones import crear_reservacion
 
 
 def _registrar_desde_formulario(usuario, form: ReservacionForm) -> bool:
-    """Invoca crear_reservacion con datos limpios y captura errores de dominio."""
+    """Invoca crear_reservacion y captura errores de dominio."""
     datos = form.cleaned_data
     try:
         crear_reservacion(

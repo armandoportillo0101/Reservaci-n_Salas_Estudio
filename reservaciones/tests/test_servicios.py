@@ -19,7 +19,7 @@ class DisponibilidadServiceTests(TestCase):
     """Pruebas unitarias de detección de traslapes (RN-06 y RN-07)."""
 
     def setUp(self):
-        """Configura usuario, salas y una reservación vigente base 10:00-11:00."""
+        """Configura usuario, salas y reservación vigente 10:00-11:00."""
         self.usuario = User.objects.create_user(
             username="usuario_disp",
             password="password123",
@@ -164,7 +164,7 @@ class CrearReservacionServiceTests(TestCase):
         self.fecha_futura = date(2026, 11, 20)
 
     def test_ut01_reservacion_valida_queda_vigente_y_capacidad_exacta(self):
-        """UT-01: reservación válida queda VIGENTE; permite fecha hoy y cap exacta."""
+        """UT-01: reservación válida queda VIGENTE; hoy y cap exacta."""
         reservacion = crear_reservacion(
             usuario=self.usuario,
             sala=self.sala_a,
@@ -344,7 +344,7 @@ class CrearReservacionServiceTests(TestCase):
         )
 
     def test_casos_adicionales_sala_inexistente_inactiva_y_limites(self):
-        """Tarea 15: sala inexistente/inactiva, límites de hora, fecha y campos."""
+        """Tarea 15: sala inexistente/inactiva, límites de hora y campos."""
         # Sala None o ID inexistente
         for sala_invalida in (None, 99999, Sala(id=99999, nombre="Fantasma")):
             with self.assertRaises(exceptions.SalaInexistenteError) as ctx:
@@ -388,7 +388,7 @@ class CrearReservacionServiceTests(TestCase):
                 hoy=self.hoy,
             )
 
-        # Límites de hora: 07:59, 19:01, misma hora de inicio, 20:01, y 19:00-20:00 válido
+        # Límites de hora: 07:59, 19:01, misma hora, 20:01, y 19:00-20:00
         for inicio_inv in (time(7, 59), time(19, 1)):
             with self.assertRaises(exceptions.HoraInicioFueraDeRangoError):
                 crear_reservacion(
@@ -465,4 +465,3 @@ class CrearReservacionServiceTests(TestCase):
             hoy=self.hoy,
         )
         self.assertEqual(r_limite.estado, Reservacion.Estado.VIGENTE)
-

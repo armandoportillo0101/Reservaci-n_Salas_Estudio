@@ -16,7 +16,7 @@ PROPOSITO_LONGITUD_MAXIMA = 200
 
 
 def _calcular_minutos_entre(hora_inicio: time, hora_fin: time) -> int:
-    """Calcula la diferencia en minutos entre dos objetos time del mismo día."""
+    """Calcula la diferencia en minutos entre dos horas del mismo día."""
     minutos_inicio = hora_inicio.hour * MINUTOS_POR_HORA + hora_inicio.minute
     minutos_fin = hora_fin.hour * MINUTOS_POR_HORA + hora_fin.minute
     return minutos_fin - minutos_inicio

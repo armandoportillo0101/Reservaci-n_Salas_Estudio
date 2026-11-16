@@ -105,7 +105,7 @@ class ReservacionModelTests(TestCase):
                 )
 
     def test_restriccion_bd_estado_valido(self):
-        """Verifica CheckConstraint para estados permitidos VIGENTE/CANCELADA."""
+        """Verifica CheckConstraint para estados VIGENTE y CANCELADA."""
         with self.assertRaises(IntegrityError):
             with transaction.atomic():
                 Reservacion.objects.create(
@@ -124,7 +124,7 @@ class CargarSalasCommandTests(TestCase):
     """Pruebas del comando idempotente cargar_salas para datos iniciales."""
 
     def test_cargar_salas_crea_las_cuatro_salas_exactas_y_es_idempotente(self):
-        """Verifica las 4 salas iniciales, mantenimiento inactiva e idempotencia."""
+        """Verifica las 4 salas, mantenimiento inactiva e idempotencia."""
         salida = StringIO()
         call_command("cargar_salas", stdout=salida)
         call_command("cargar_salas", stdout=salida)
@@ -142,4 +142,3 @@ class CargarSalasCommandTests(TestCase):
             self.assertEqual(sala.ubicacion, ubicacion)
             self.assertEqual(sala.capacidad, capacidad)
             self.assertEqual(sala.activa, activa)
-

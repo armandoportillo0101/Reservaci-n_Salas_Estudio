@@ -11,7 +11,7 @@ class ValidadoresHorarioDuracionTests(SimpleTestCase):
     """Pruebas de validadores de hora de inicio, hora de fin y duración."""
 
     def test_constantes_nombradas_definidas(self):
-        """Verifica que las constantes de negocio existan sin números mágicos."""
+        """Verifica constantes de negocio sin números mágicos."""
         self.assertEqual(validators.HORA_INICIO_MINIMA, time(8, 0))
         self.assertEqual(validators.HORA_INICIO_MAXIMA, time(19, 0))
         self.assertEqual(validators.HORA_FIN_MAXIMA, time(20, 0))
@@ -28,14 +28,18 @@ class ValidadoresHorarioDuracionTests(SimpleTestCase):
 
         with self.assertRaises(exceptions.HoraInicioFueraDeRangoError) as ctx:
             validators.validar_hora_inicio(time(7, 59))
-        self.assertEqual(str(ctx.exception), messages.MSG_INICIO_FUERA_DE_RANGO)
+        self.assertEqual(
+            str(ctx.exception), messages.MSG_INICIO_FUERA_DE_RANGO
+        )
 
         with self.assertRaises(exceptions.HoraInicioFueraDeRangoError) as ctx:
             validators.validar_hora_inicio(time(19, 1))
-        self.assertEqual(str(ctx.exception), messages.MSG_INICIO_FUERA_DE_RANGO)
+        self.assertEqual(
+            str(ctx.exception), messages.MSG_INICIO_FUERA_DE_RANGO
+        )
 
     def test_validar_hora_fin_limites_y_orden(self):
-        """Prueba hora de fin igual/anterior al inicio y límites 20:00 y 20:01."""
+        """Prueba hora de fin igual/menor al inicio y límites 20:00/20:01."""
         validators.validar_hora_fin(time(18, 0), time(20, 0))
 
         with self.assertRaises(exceptions.HoraFinNoPosteriorError) as ctx:
@@ -51,7 +55,7 @@ class ValidadoresHorarioDuracionTests(SimpleTestCase):
         self.assertEqual(str(ctx.exception), messages.MSG_FIN_FUERA_DE_RANGO)
 
     def test_validar_duracion_limites_29_30_120_121(self):
-        """UT-07: prueba los valores límite de duración 29, 30, 120 y 121 min."""
+        """UT-07: prueba los límites de duración 29, 30, 120 y 121 min."""
         validators.validar_duracion(time(10, 0), time(10, 30))
         validators.validar_duracion(time(10, 0), time(12, 0))
 
@@ -75,7 +79,9 @@ class ValidadoresCamposDominioTests(TestCase):
         validators.validar_fecha_no_pasada(date(2099, 1, 1))
 
         with self.assertRaises(exceptions.FechaPasadaError) as ctx:
-            validators.validar_fecha_no_pasada(date(2026, 11, 15), hoy=hoy_fijo)
+            validators.validar_fecha_no_pasada(
+                date(2026, 11, 15), hoy=hoy_fijo
+            )
         self.assertEqual(str(ctx.exception), messages.MSG_FECHA_PASADA)
 
     def test_validar_asistentes_y_capacidad(self):

@@ -1,4 +1,4 @@
-"""Pruebas unitarias de las vistas de reservaciones (UT-11, UT-12 y errores)."""
+"""Pruebas unitarias de vistas de reservaciones (UT-11, UT-12 y errores)."""
 from datetime import date, time
 
 from django.contrib.auth import get_user_model
@@ -64,7 +64,7 @@ class NuevaReservacionViewTests(TestCase):
             self.assertIn(id_esperado, contenido)
 
     def test_ut12_post_valido_crea_reservacion_redirige_y_muestra_exito(self):
-        """UT-12: POST válido crea reservación VIGENTE, redirige y da mensaje."""
+        """UT-12: POST válido crea reservación VIGENTE y redirige."""
         self.client.force_login(self.usuario)
         datos = {
             "sala": self.sala_activa.id,
@@ -85,7 +85,7 @@ class NuevaReservacionViewTests(TestCase):
     def test_post_error_negocio_no_registra_muestra_mensaje_y_conserva_datos(
         self,
     ):
-        """En error de dominio no registra, muestra mensaje y conserva datos."""
+        """En error de dominio no registra, muestra error y conserva datos."""
         self.client.force_login(self.usuario)
         Reservacion.objects.create(
             usuario=self.usuario,
