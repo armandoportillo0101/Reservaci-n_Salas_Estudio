@@ -1,0 +1,21 @@
+Creating test database for alias 'default' ('C:\Users\DELL G3\Desktop\Reservacion_Salas_Estudio\test_db.sqlite3')...
+Found 26 test(s).
+test_it01_solicitudes_concurrentes_incompatibles_solo_una_vigente (reservaciones.tests.test_integracion.ConcurrenciaReservacionIntegrationTests.test_it01_solicitudes_concurrentes_incompatibles_solo_una_vigente)
+IT-01: dos hilos simultáneos producen 1 VIGENTE y 1 traslape. ... FAIL
+
+======================================================================
+FAIL: test_it01_solicitudes_concurrentes_incompatibles_solo_una_vigente (reservaciones.tests.test_integracion.ConcurrenciaReservacionIntegrationTests.test_it01_solicitudes_concurrentes_incompatibles_solo_una_vigente)
+IT-01: dos hilos simultáneos producen 1 VIGENTE y 1 traslape.
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\DELL G3\Desktop\Reservacion_Salas_Estudio\reservaciones\tests\test_integracion.py", line 93, in test_it01_solicitudes_concurrentes_incompatibles_solo_una_vigente
+    self.assertTrue(all(bloqueos_atomicos))
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: False is not true
+
+----------------------------------------------------------------------
+Ran 26 tests in 17.973s
+
+FAILED (failures=1)
+Destroying test database for alias 'default' ('C:\Users\DELL G3\Desktop\Reservacion_Salas_Estudio\test_db.sqlite3')...
+System check identified no issues (0 silenced).
