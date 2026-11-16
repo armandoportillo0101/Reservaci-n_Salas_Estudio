@@ -11,6 +11,8 @@ __pycache__/
 # Base de datos local
 db.sqlite3
 db.sqlite3-journal
+test_db.sqlite3
+test_db.sqlite3-journal
 
 # Cobertura y reportes generados
 htmlcov/
@@ -20,3 +22,4 @@ reportes/
 
 # Variables de entorno locales
 .env
+
