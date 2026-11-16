@@ -1,0 +1,23 @@
+Creating test database for alias 'default' ('C:\Users\DELL G3\Desktop\Reservacion_Salas_Estudio\test_db.sqlite3')...
+Found 7 test(s).
+test_cargar_salas_crea_las_cuatro_salas_exactas_y_es_idempotente (reservaciones.tests.test_modelos.CargarSalasCommandTests.test_cargar_salas_crea_las_cuatro_salas_exactas_y_es_idempotente)
+Verifica las 4 salas iniciales, mantenimiento inactiva e idempotencia. ... ok
+test_crear_reservacion_valores_por_defecto_y_estados (reservaciones.tests.test_modelos.ReservacionModelTests.test_crear_reservacion_valores_por_defecto_y_estados)
+Verifica estado VIGENTE por defecto y campos de auditoría. ... ok
+test_restriccion_bd_asistentes_mayor_o_igual_a_uno (reservaciones.tests.test_modelos.ReservacionModelTests.test_restriccion_bd_asistentes_mayor_o_igual_a_uno)
+Verifica CheckConstraint asistentes >= 1 en base de datos. ... ok
+test_restriccion_bd_estado_valido (reservaciones.tests.test_modelos.ReservacionModelTests.test_restriccion_bd_estado_valido)
+Verifica CheckConstraint para estados permitidos VIGENTE/CANCELADA. ... ok
+test_restriccion_bd_hora_fin_mayor_a_hora_inicio (reservaciones.tests.test_modelos.ReservacionModelTests.test_restriccion_bd_hora_fin_mayor_a_hora_inicio)
+Verifica CheckConstraint hora_fin > hora_inicio en base de datos. ... ok
+test_crear_sala_campos_y_representacion (reservaciones.tests.test_modelos.SalaModelTests.test_crear_sala_campos_y_representacion)
+Verifica creación de sala y su representación en texto. ... ok
+test_restriccion_capacidad_positiva_en_sala (reservaciones.tests.test_modelos.SalaModelTests.test_restriccion_capacidad_positiva_en_sala)
+Verifica que la base de datos rechace capacidad menor a 1. ... ok
+
+----------------------------------------------------------------------
+Ran 7 tests in 4.390s
+
+OK
+Destroying test database for alias 'default' ('C:\Users\DELL G3\Desktop\Reservacion_Salas_Estudio\test_db.sqlite3')...
+System check identified no issues (0 silenced).
