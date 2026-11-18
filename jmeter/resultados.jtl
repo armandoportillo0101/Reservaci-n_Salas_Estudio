@@ -1,0 +1,361 @@
+timeStamp,elapsed,label,responseCode,responseMessage,threadName,dataType,success,failureMessage,bytes,sentBytes,grpThreads,allThreads,URL,Latency,IdleTime,Connect
+1794976665424,1,PERF-01 GET /reservaciones/ (Listado),200,OK,PERF-01 Grupo 1-1,text,true,,12331,240,1,1,http://127.0.0.1:8000/reservaciones/,1,0,1
+1794976665425,1,PERF-01 GET /reservaciones/ (Listado),200,OK,PERF-01 Grupo 1-1,text,true,,12331,240,1,1,http://127.0.0.1:8000/reservaciones/,1,0,1
+1794976665426,2,PERF-01 GET /reservaciones/ (Listado),200,OK,PERF-01 Grupo 1-1,text,true,,12331,240,1,1,http://127.0.0.1:8000/reservaciones/,2,0,1
+1794976665428,3,PERF-01 GET /reservaciones/ (Listado),200,OK,PERF-01 Grupo 1-1,text,true,,12331,240,1,1,http://127.0.0.1:8000/reservaciones/,3,0,1
+1794976665432,5,PERF-01 GET /reservaciones/ (Listado),200,OK,PERF-01 Grupo 1-1,text,true,,12331,240,1,1,http://127.0.0.1:8000/reservaciones/,5,0,1
+1794976665436,1,PERF-01 GET /reservaciones/ (Listado),200,OK,PERF-01 Grupo 1-2,text,true,,12331,240,1,1,http://127.0.0.1:8000/reservaciones/,1,0,1
+1794976665437,1,PERF-01 GET /reservaciones/ (Listado),200,OK,PERF-01 Grupo 1-2,text,true,,12331,240,1,1,http://127.0.0.1:8000/reservaciones/,1,0,1
+1794976665439,1,PERF-01 GET /reservaciones/ (Listado),200,OK,PERF-01 Grupo 1-2,text,true,,12331,240,1,1,http://127.0.0.1:8000/reservaciones/,1,0,1
+1794976665440,2,PERF-01 GET /reservaciones/ (Listado),200,OK,PERF-01 Grupo 1-2,text,true,,12331,240,1,1,http://127.0.0.1:8000/reservaciones/,2,0,1
+1794976665443,2,PERF-01 GET /reservaciones/ (Listado),200,OK,PERF-01 Grupo 1-2,text,true,,12331,240,1,1,http://127.0.0.1:8000/reservaciones/,2,0,1
+1794976665487,1,PERF-01 GET /reservaciones/ (Listado),200,OK,PERF-01 Grupo 1-3,text,true,,12331,240,1,1,http://127.0.0.1:8000/reservaciones/,1,0,1
+1794976665488,1,PERF-01 GET /reservaciones/ (Listado),200,OK,PERF-01 Grupo 1-3,text,true,,12331,240,1,1,http://127.0.0.1:8000/reservaciones/,1,0,1
+1794976665489,1,PERF-01 GET /reservaciones/ (Listado),200,OK,PERF-01 Grupo 1-3,text,true,,12331,240,1,1,http://127.0.0.1:8000/reservaciones/,1,0,1
+1794976665490,1,PERF-01 GET /reservaciones/ (Listado),200,OK,PERF-01 Grupo 1-3,text,true,,12331,240,1,1,http://127.0.0.1:8000/reservaciones/,1,0,1
+1794976665490,1,PERF-01 GET /reservaciones/ (Listado),200,OK,PERF-01 Grupo 1-3,text,true,,12331,240,1,1,http://127.0.0.1:8000/reservaciones/,1,0,1
+1794976665539,1,PERF-01 GET /reservaciones/ (Listado),200,OK,PERF-01 Grupo 1-4,text,true,,12331,240,1,1,http://127.0.0.1:8000/reservaciones/,1,0,1
+1794976665540,1,PERF-01 GET /reservaciones/ (Listado),200,OK,PERF-01 Grupo 1-4,text,true,,12331,240,1,1,http://127.0.0.1:8000/reservaciones/,1,0,1
+1794976665541,1,PERF-01 GET /reservaciones/ (Listado),200,OK,PERF-01 Grupo 1-4,text,true,,12331,240,1,1,http://127.0.0.1:8000/reservaciones/,1,0,1
+1794976665542,9,PERF-01 GET /reservaciones/ (Listado),200,OK,PERF-01 Grupo 1-4,text,true,,12331,240,1,1,http://127.0.0.1:8000/reservaciones/,9,0,1
+1794976665552,4,PERF-01 GET /reservaciones/ (Listado),200,OK,PERF-01 Grupo 1-4,text,true,,12331,240,1,1,http://127.0.0.1:8000/reservaciones/,4,0,1
+1794976665563,2,PERF-01 GET /reservaciones/ (Listado),200,OK,PERF-01 Grupo 1-5,text,true,,12331,240,1,1,http://127.0.0.1:8000/reservaciones/,2,0,1
+1794976665565,2,PERF-01 GET /reservaciones/ (Listado),200,OK,PERF-01 Grupo 1-5,text,true,,12331,240,1,1,http://127.0.0.1:8000/reservaciones/,2,0,1
+1794976665567,6,PERF-01 GET /reservaciones/ (Listado),200,OK,PERF-01 Grupo 1-5,text,true,,12331,240,1,1,http://127.0.0.1:8000/reservaciones/,6,0,1
+1794976665574,2,PERF-01 GET /reservaciones/ (Listado),200,OK,PERF-01 Grupo 1-5,text,true,,12331,240,1,1,http://127.0.0.1:8000/reservaciones/,2,0,1
+1794976665576,2,PERF-01 GET /reservaciones/ (Listado),200,OK,PERF-01 Grupo 1-5,text,true,,12331,240,1,1,http://127.0.0.1:8000/reservaciones/,2,0,1
+1794976665582,1,PERF-01 GET /reservaciones/ (Listado),200,OK,PERF-01 Grupo 1-6,text,true,,12331,240,1,1,http://127.0.0.1:8000/reservaciones/,1,0,1
+1794976665583,1,PERF-01 GET /reservaciones/ (Listado),200,OK,PERF-01 Grupo 1-6,text,true,,12331,240,1,1,http://127.0.0.1:8000/reservaciones/,1,0,1
+1794976665584,1,PERF-01 GET /reservaciones/ (Listado),200,OK,PERF-01 Grupo 1-6,text,true,,12331,240,1,1,http://127.0.0.1:8000/reservaciones/,1,0,1
+1794976665585,1,PERF-01 GET /reservaciones/ (Listado),200,OK,PERF-01 Grupo 1-6,text,true,,12331,240,1,1,http://127.0.0.1:8000/reservaciones/,1,0,1
+1794976665586,1,PERF-01 GET /reservaciones/ (Listado),200,OK,PERF-01 Grupo 1-6,text,true,,12331,240,1,1,http://127.0.0.1:8000/reservaciones/,1,0,1
+1794976665612,1,PERF-01 GET /reservaciones/ (Listado),200,OK,PERF-01 Grupo 1-7,text,true,,12331,240,1,1,http://127.0.0.1:8000/reservaciones/,1,0,1
+1794976665613,1,PERF-01 GET /reservaciones/ (Listado),200,OK,PERF-01 Grupo 1-7,text,true,,12331,240,1,1,http://127.0.0.1:8000/reservaciones/,1,0,1
+1794976665614,1,PERF-01 GET /reservaciones/ (Listado),200,OK,PERF-01 Grupo 1-7,text,true,,12331,240,1,1,http://127.0.0.1:8000/reservaciones/,1,0,1
+1794976665615,1,PERF-01 GET /reservaciones/ (Listado),200,OK,PERF-01 Grupo 1-7,text,true,,12331,240,1,1,http://127.0.0.1:8000/reservaciones/,1,0,1
+1794976665616,1,PERF-01 GET /reservaciones/ (Listado),200,OK,PERF-01 Grupo 1-7,text,true,,12331,240,1,1,http://127.0.0.1:8000/reservaciones/,1,0,1
+1794976665650,1,PERF-01 GET /reservaciones/ (Listado),200,OK,PERF-01 Grupo 1-8,text,true,,12331,240,1,1,http://127.0.0.1:8000/reservaciones/,1,0,1
+1794976665651,1,PERF-01 GET /reservaciones/ (Listado),200,OK,PERF-01 Grupo 1-8,text,true,,12331,240,1,1,http://127.0.0.1:8000/reservaciones/,1,0,1
+1794976665652,1,PERF-01 GET /reservaciones/ (Listado),200,OK,PERF-01 Grupo 1-8,text,true,,12331,240,1,1,http://127.0.0.1:8000/reservaciones/,1,0,1
+1794976665653,1,PERF-01 GET /reservaciones/ (Listado),200,OK,PERF-01 Grupo 1-8,text,true,,12331,240,1,1,http://127.0.0.1:8000/reservaciones/,1,0,1
+1794976665654,1,PERF-01 GET /reservaciones/ (Listado),200,OK,PERF-01 Grupo 1-8,text,true,,12331,240,1,1,http://127.0.0.1:8000/reservaciones/,1,0,1
+1794976665684,1,PERF-01 GET /reservaciones/ (Listado),200,OK,PERF-01 Grupo 1-9,text,true,,12331,240,1,1,http://127.0.0.1:8000/reservaciones/,1,0,1
+1794976665685,1,PERF-01 GET /reservaciones/ (Listado),200,OK,PERF-01 Grupo 1-9,text,true,,12331,240,1,1,http://127.0.0.1:8000/reservaciones/,1,0,1
+1794976665686,1,PERF-01 GET /reservaciones/ (Listado),200,OK,PERF-01 Grupo 1-9,text,true,,12331,240,1,1,http://127.0.0.1:8000/reservaciones/,1,0,1
+1794976665687,1,PERF-01 GET /reservaciones/ (Listado),200,OK,PERF-01 Grupo 1-9,text,true,,12331,240,1,1,http://127.0.0.1:8000/reservaciones/,1,0,1
+1794976665688,1,PERF-01 GET /reservaciones/ (Listado),200,OK,PERF-01 Grupo 1-9,text,true,,12331,240,1,1,http://127.0.0.1:8000/reservaciones/,1,0,1
+1794976665704,1,PERF-01 GET /reservaciones/ (Listado),200,OK,PERF-01 Grupo 1-10,text,true,,12331,240,1,1,http://127.0.0.1:8000/reservaciones/,1,0,1
+1794976665705,1,PERF-01 GET /reservaciones/ (Listado),200,OK,PERF-01 Grupo 1-10,text,true,,12331,240,1,1,http://127.0.0.1:8000/reservaciones/,1,0,1
+1794976665706,1,PERF-01 GET /reservaciones/ (Listado),200,OK,PERF-01 Grupo 1-10,text,true,,12331,240,1,1,http://127.0.0.1:8000/reservaciones/,1,0,1
+1794976665707,1,PERF-01 GET /reservaciones/ (Listado),200,OK,PERF-01 Grupo 1-10,text,true,,12331,240,1,1,http://127.0.0.1:8000/reservaciones/,1,0,1
+1794976665708,1,PERF-01 GET /reservaciones/ (Listado),200,OK,PERF-01 Grupo 1-10,text,true,,12331,240,1,1,http://127.0.0.1:8000/reservaciones/,1,0,1
+1794976665714,1,PERF-01 GET /reservaciones/ (Listado),200,OK,PERF-01 Grupo 1-11,text,true,,12331,240,1,1,http://127.0.0.1:8000/reservaciones/,1,0,1
+1794976665715,1,PERF-01 GET /reservaciones/ (Listado),200,OK,PERF-01 Grupo 1-11,text,true,,12331,240,1,1,http://127.0.0.1:8000/reservaciones/,1,0,1
+1794976665716,1,PERF-01 GET /reservaciones/ (Listado),200,OK,PERF-01 Grupo 1-11,text,true,,12331,240,1,1,http://127.0.0.1:8000/reservaciones/,1,0,1
+1794976665717,1,PERF-01 GET /reservaciones/ (Listado),200,OK,PERF-01 Grupo 1-11,text,true,,12331,240,1,1,http://127.0.0.1:8000/reservaciones/,1,0,1
+1794976665718,1,PERF-01 GET /reservaciones/ (Listado),200,OK,PERF-01 Grupo 1-11,text,true,,12331,240,1,1,http://127.0.0.1:8000/reservaciones/,1,0,1
+1794976665742,2,PERF-01 GET /reservaciones/ (Listado),200,OK,PERF-01 Grupo 1-13,text,true,,12331,240,1,1,http://127.0.0.1:8000/reservaciones/,2,0,1
+1794976665745,2,PERF-01 GET /reservaciones/ (Listado),200,OK,PERF-01 Grupo 1-13,text,true,,12331,240,1,1,http://127.0.0.1:8000/reservaciones/,2,0,1
+1794976665747,6,PERF-01 GET /reservaciones/ (Listado),200,OK,PERF-01 Grupo 1-13,text,true,,12331,240,1,1,http://127.0.0.1:8000/reservaciones/,6,0,1
+1794976665754,4,PERF-01 GET /reservaciones/ (Listado),200,OK,PERF-01 Grupo 1-13,text,true,,12331,240,1,1,http://127.0.0.1:8000/reservaciones/,4,0,1
+1794976665758,4,PERF-01 GET /reservaciones/ (Listado),200,OK,PERF-01 Grupo 1-13,text,true,,12331,240,1,1,http://127.0.0.1:8000/reservaciones/,4,0,1
+1794976665767,1,PERF-01 GET /reservaciones/ (Listado),200,OK,PERF-01 Grupo 1-14,text,true,,12331,240,1,1,http://127.0.0.1:8000/reservaciones/,1,0,1
+1794976665764,6,PERF-01 GET /reservaciones/ (Listado),200,OK,PERF-01 Grupo 1-12,text,true,,12331,240,1,1,http://127.0.0.1:8000/reservaciones/,6,0,1
+1794976665768,2,PERF-01 GET /reservaciones/ (Listado),200,OK,PERF-01 Grupo 1-14,text,true,,12331,240,1,1,http://127.0.0.1:8000/reservaciones/,2,0,1
+1794976665771,1,PERF-01 GET /reservaciones/ (Listado),200,OK,PERF-01 Grupo 1-14,text,true,,12331,240,1,1,http://127.0.0.1:8000/reservaciones/,1,0,1
+1794976665770,2,PERF-01 GET /reservaciones/ (Listado),200,OK,PERF-01 Grupo 1-12,text,true,,12331,240,1,1,http://127.0.0.1:8000/reservaciones/,2,0,1
+1794976665772,2,PERF-01 GET /reservaciones/ (Listado),200,OK,PERF-01 Grupo 1-14,text,true,,12331,240,1,1,http://127.0.0.1:8000/reservaciones/,2,0,1
+1794976665773,2,PERF-01 GET /reservaciones/ (Listado),200,OK,PERF-01 Grupo 1-12,text,true,,12331,240,1,1,http://127.0.0.1:8000/reservaciones/,2,0,1
+1794976665774,2,PERF-01 GET /reservaciones/ (Listado),200,OK,PERF-01 Grupo 1-14,text,true,,12331,240,1,1,http://127.0.0.1:8000/reservaciones/,2,0,1
+1794976665775,2,PERF-01 GET /reservaciones/ (Listado),200,OK,PERF-01 Grupo 1-12,text,true,,12331,240,1,1,http://127.0.0.1:8000/reservaciones/,2,0,1
+1794976665778,4,PERF-01 GET /reservaciones/ (Listado),200,OK,PERF-01 Grupo 1-12,text,true,,12331,240,1,1,http://127.0.0.1:8000/reservaciones/,4,0,1
+1794976665810,3,PERF-01 GET /reservaciones/ (Listado),200,OK,PERF-01 Grupo 1-15,text,true,,12331,240,1,1,http://127.0.0.1:8000/reservaciones/,3,0,1
+1794976665814,1,PERF-01 GET /reservaciones/ (Listado),200,OK,PERF-01 Grupo 1-15,text,true,,12331,240,1,1,http://127.0.0.1:8000/reservaciones/,1,0,1
+1794976665816,1,PERF-01 GET /reservaciones/ (Listado),200,OK,PERF-01 Grupo 1-15,text,true,,12331,240,1,1,http://127.0.0.1:8000/reservaciones/,1,0,1
+1794976665817,1,PERF-01 GET /reservaciones/ (Listado),200,OK,PERF-01 Grupo 1-15,text,true,,12331,240,1,1,http://127.0.0.1:8000/reservaciones/,1,0,1
+1794976665818,1,PERF-01 GET /reservaciones/ (Listado),200,OK,PERF-01 Grupo 1-15,text,true,,12331,240,1,1,http://127.0.0.1:8000/reservaciones/,1,0,1
+1794976665822,1,PERF-01 GET /reservaciones/ (Listado),200,OK,PERF-01 Grupo 1-16,text,true,,12331,240,1,1,http://127.0.0.1:8000/reservaciones/,1,0,1
+1794976665823,1,PERF-01 GET /reservaciones/ (Listado),200,OK,PERF-01 Grupo 1-16,text,true,,12331,240,1,1,http://127.0.0.1:8000/reservaciones/,1,0,1
+1794976665824,1,PERF-01 GET /reservaciones/ (Listado),200,OK,PERF-01 Grupo 1-16,text,true,,12331,240,1,1,http://127.0.0.1:8000/reservaciones/,1,0,1
+1794976665825,1,PERF-01 GET /reservaciones/ (Listado),200,OK,PERF-01 Grupo 1-16,text,true,,12331,240,1,1,http://127.0.0.1:8000/reservaciones/,1,0,1
+1794976665826,1,PERF-01 GET /reservaciones/ (Listado),200,OK,PERF-01 Grupo 1-16,text,true,,12331,240,1,1,http://127.0.0.1:8000/reservaciones/,1,0,1
+1794976665843,1,PERF-01 GET /reservaciones/ (Listado),200,OK,PERF-01 Grupo 1-17,text,true,,12331,240,1,1,http://127.0.0.1:8000/reservaciones/,1,0,1
+1794976665844,1,PERF-01 GET /reservaciones/ (Listado),200,OK,PERF-01 Grupo 1-17,text,true,,12331,240,1,1,http://127.0.0.1:8000/reservaciones/,1,0,1
+1794976665845,1,PERF-01 GET /reservaciones/ (Listado),200,OK,PERF-01 Grupo 1-17,text,true,,12331,240,1,1,http://127.0.0.1:8000/reservaciones/,1,0,1
+1794976665846,1,PERF-01 GET /reservaciones/ (Listado),200,OK,PERF-01 Grupo 1-17,text,true,,12331,240,1,1,http://127.0.0.1:8000/reservaciones/,1,0,1
+1794976665848,2,PERF-01 GET /reservaciones/ (Listado),200,OK,PERF-01 Grupo 1-17,text,true,,12331,240,1,1,http://127.0.0.1:8000/reservaciones/,2,0,1
+1794976665895,3,PERF-01 GET /reservaciones/ (Listado),200,OK,PERF-01 Grupo 1-18,text,true,,12331,240,1,1,http://127.0.0.1:8000/reservaciones/,3,0,1
+1794976665899,12,PERF-01 GET /reservaciones/ (Listado),200,OK,PERF-01 Grupo 1-18,text,true,,12331,240,1,1,http://127.0.0.1:8000/reservaciones/,12,0,1
+1794976665912,1,PERF-01 GET /reservaciones/ (Listado),200,OK,PERF-01 Grupo 1-18,text,true,,12331,240,1,1,http://127.0.0.1:8000/reservaciones/,1,0,1
+1794976665913,1,PERF-01 GET /reservaciones/ (Listado),200,OK,PERF-01 Grupo 1-18,text,true,,12331,240,1,1,http://127.0.0.1:8000/reservaciones/,1,0,1
+1794976665915,2,PERF-01 GET /reservaciones/ (Listado),200,OK,PERF-01 Grupo 1-18,text,true,,12331,240,1,1,http://127.0.0.1:8000/reservaciones/,2,0,1
+1794976665936,1,PERF-01 GET /reservaciones/ (Listado),200,OK,PERF-01 Grupo 1-19,text,true,,12331,240,1,1,http://127.0.0.1:8000/reservaciones/,1,0,1
+1794976665937,1,PERF-01 GET /reservaciones/ (Listado),200,OK,PERF-01 Grupo 1-19,text,true,,12331,240,1,1,http://127.0.0.1:8000/reservaciones/,1,0,1
+1794976665939,2,PERF-01 GET /reservaciones/ (Listado),200,OK,PERF-01 Grupo 1-19,text,true,,12331,240,1,1,http://127.0.0.1:8000/reservaciones/,2,0,1
+1794976665941,2,PERF-01 GET /reservaciones/ (Listado),200,OK,PERF-01 Grupo 1-19,text,true,,12331,240,1,1,http://127.0.0.1:8000/reservaciones/,2,0,1
+1794976665944,4,PERF-01 GET /reservaciones/ (Listado),200,OK,PERF-01 Grupo 1-19,text,true,,12331,240,1,1,http://127.0.0.1:8000/reservaciones/,4,0,1
+1794976665978,1,PERF-01 GET /reservaciones/ (Listado),200,OK,PERF-01 Grupo 1-20,text,true,,12331,240,1,1,http://127.0.0.1:8000/reservaciones/,1,0,1
+1794976665979,1,PERF-01 GET /reservaciones/ (Listado),200,OK,PERF-01 Grupo 1-20,text,true,,12331,240,1,1,http://127.0.0.1:8000/reservaciones/,1,0,1
+1794976665980,1,PERF-01 GET /reservaciones/ (Listado),200,OK,PERF-01 Grupo 1-20,text,true,,12331,240,1,1,http://127.0.0.1:8000/reservaciones/,1,0,1
+1794976665981,1,PERF-01 GET /reservaciones/ (Listado),200,OK,PERF-01 Grupo 1-20,text,true,,12331,240,1,1,http://127.0.0.1:8000/reservaciones/,1,0,1
+1794976665982,1,PERF-01 GET /reservaciones/ (Listado),200,OK,PERF-01 Grupo 1-20,text,true,,12331,240,1,1,http://127.0.0.1:8000/reservaciones/,1,0,1
+1794976666003,1,PERF-01 GET /reservaciones/ (Listado),200,OK,PERF-01 Grupo 1-21,text,true,,12331,240,1,1,http://127.0.0.1:8000/reservaciones/,1,0,1
+1794976666004,1,PERF-01 GET /reservaciones/ (Listado),200,OK,PERF-01 Grupo 1-21,text,true,,12331,240,1,1,http://127.0.0.1:8000/reservaciones/,1,0,1
+1794976666005,1,PERF-01 GET /reservaciones/ (Listado),200,OK,PERF-01 Grupo 1-21,text,true,,12331,240,1,1,http://127.0.0.1:8000/reservaciones/,1,0,1
+1794976666006,1,PERF-01 GET /reservaciones/ (Listado),200,OK,PERF-01 Grupo 1-21,text,true,,12331,240,1,1,http://127.0.0.1:8000/reservaciones/,1,0,1
+1794976666007,1,PERF-01 GET /reservaciones/ (Listado),200,OK,PERF-01 Grupo 1-21,text,true,,12331,240,1,1,http://127.0.0.1:8000/reservaciones/,1,0,1
+1794976666034,1,PERF-01 GET /reservaciones/ (Listado),200,OK,PERF-01 Grupo 1-23,text,true,,12331,240,1,1,http://127.0.0.1:8000/reservaciones/,1,0,1
+1794976666035,1,PERF-01 GET /reservaciones/ (Listado),200,OK,PERF-01 Grupo 1-23,text,true,,12331,240,1,1,http://127.0.0.1:8000/reservaciones/,1,0,1
+1794976666036,1,PERF-01 GET /reservaciones/ (Listado),200,OK,PERF-01 Grupo 1-23,text,true,,12331,240,1,1,http://127.0.0.1:8000/reservaciones/,1,0,1
+1794976666037,1,PERF-01 GET /reservaciones/ (Listado),200,OK,PERF-01 Grupo 1-23,text,true,,12331,240,1,1,http://127.0.0.1:8000/reservaciones/,1,0,1
+1794976666038,1,PERF-01 GET /reservaciones/ (Listado),200,OK,PERF-01 Grupo 1-23,text,true,,12331,240,1,1,http://127.0.0.1:8000/reservaciones/,1,0,1
+1794976666049,1,PERF-01 GET /reservaciones/ (Listado),200,OK,PERF-01 Grupo 1-22,text,true,,12331,240,1,1,http://127.0.0.1:8000/reservaciones/,1,0,1
+1794976666050,1,PERF-01 GET /reservaciones/ (Listado),200,OK,PERF-01 Grupo 1-22,text,true,,12331,240,1,1,http://127.0.0.1:8000/reservaciones/,1,0,1
+1794976666051,3,PERF-01 GET /reservaciones/ (Listado),200,OK,PERF-01 Grupo 1-22,text,true,,12331,240,1,1,http://127.0.0.1:8000/reservaciones/,3,0,1
+1794976666055,5,PERF-01 GET /reservaciones/ (Listado),200,OK,PERF-01 Grupo 1-22,text,true,,12331,240,1,1,http://127.0.0.1:8000/reservaciones/,5,0,1
+1794976666060,1,PERF-01 GET /reservaciones/ (Listado),200,OK,PERF-01 Grupo 1-22,text,true,,12331,240,1,1,http://127.0.0.1:8000/reservaciones/,1,0,1
+1794976666155,1,PERF-01 GET /reservaciones/ (Listado),200,OK,PERF-01 Grupo 1-24,text,true,,12331,240,1,1,http://127.0.0.1:8000/reservaciones/,1,0,1
+1794976666156,1,PERF-01 GET /reservaciones/ (Listado),200,OK,PERF-01 Grupo 1-24,text,true,,12331,240,1,1,http://127.0.0.1:8000/reservaciones/,1,0,1
+1794976666157,1,PERF-01 GET /reservaciones/ (Listado),200,OK,PERF-01 Grupo 1-24,text,true,,12331,240,1,1,http://127.0.0.1:8000/reservaciones/,1,0,1
+1794976666158,1,PERF-01 GET /reservaciones/ (Listado),200,OK,PERF-01 Grupo 1-24,text,true,,12331,240,1,1,http://127.0.0.1:8000/reservaciones/,1,0,1
+1794976666159,1,PERF-01 GET /reservaciones/ (Listado),200,OK,PERF-01 Grupo 1-24,text,true,,12331,240,1,1,http://127.0.0.1:8000/reservaciones/,1,0,1
+1794976666180,2,PERF-01 GET /reservaciones/ (Listado),200,OK,PERF-01 Grupo 1-27,text,true,,12331,240,1,1,http://127.0.0.1:8000/reservaciones/,2,0,1
+1794976666182,2,PERF-01 GET /reservaciones/ (Listado),200,OK,PERF-01 Grupo 1-27,text,true,,12331,240,1,1,http://127.0.0.1:8000/reservaciones/,2,0,1
+1794976666185,2,PERF-01 GET /reservaciones/ (Listado),200,OK,PERF-01 Grupo 1-27,text,true,,12331,240,1,1,http://127.0.0.1:8000/reservaciones/,2,0,1
+1794976666187,1,PERF-01 GET /reservaciones/ (Listado),200,OK,PERF-01 Grupo 1-27,text,true,,12331,240,1,1,http://127.0.0.1:8000/reservaciones/,1,0,1
+1794976666189,1,PERF-01 GET /reservaciones/ (Listado),200,OK,PERF-01 Grupo 1-27,text,true,,12331,240,1,1,http://127.0.0.1:8000/reservaciones/,1,0,1
+1794976666197,1,PERF-01 GET /reservaciones/ (Listado),200,OK,PERF-01 Grupo 1-29,text,true,,12331,240,1,1,http://127.0.0.1:8000/reservaciones/,1,0,1
+1794976666198,4,PERF-01 GET /reservaciones/ (Listado),200,OK,PERF-01 Grupo 1-29,text,true,,12331,240,1,1,http://127.0.0.1:8000/reservaciones/,4,0,1
+1794976666203,8,PERF-01 GET /reservaciones/ (Listado),200,OK,PERF-01 Grupo 1-29,text,true,,12331,240,1,1,http://127.0.0.1:8000/reservaciones/,8,0,1
+1794976666211,2,PERF-01 GET /reservaciones/ (Listado),200,OK,PERF-01 Grupo 1-29,text,true,,12331,240,1,1,http://127.0.0.1:8000/reservaciones/,2,0,1
+1794976666214,1,PERF-01 GET /reservaciones/ (Listado),200,OK,PERF-01 Grupo 1-29,text,true,,12331,240,1,1,http://127.0.0.1:8000/reservaciones/,1,0,1
+1794976666219,2,PERF-01 GET /reservaciones/ (Listado),200,OK,PERF-01 Grupo 1-25,text,true,,12331,240,1,1,http://127.0.0.1:8000/reservaciones/,2,0,1
+1794976666221,2,PERF-01 GET /reservaciones/ (Listado),200,OK,PERF-01 Grupo 1-25,text,true,,12331,240,1,1,http://127.0.0.1:8000/reservaciones/,2,0,1
+1794976666223,2,PERF-01 GET /reservaciones/ (Listado),200,OK,PERF-01 Grupo 1-25,text,true,,12331,240,1,1,http://127.0.0.1:8000/reservaciones/,2,0,1
+1794976666225,3,PERF-01 GET /reservaciones/ (Listado),200,OK,PERF-01 Grupo 1-25,text,true,,12331,240,1,1,http://127.0.0.1:8000/reservaciones/,3,0,1
+1794976666229,4,PERF-01 GET /reservaciones/ (Listado),200,OK,PERF-01 Grupo 1-25,text,true,,12331,240,1,1,http://127.0.0.1:8000/reservaciones/,4,0,1
+1794976666238,1,PERF-01 GET /reservaciones/ (Listado),200,OK,PERF-01 Grupo 1-26,text,true,,12331,240,1,1,http://127.0.0.1:8000/reservaciones/,1,0,1
+1794976666239,1,PERF-01 GET /reservaciones/ (Listado),200,OK,PERF-01 Grupo 1-26,text,true,,12331,240,1,1,http://127.0.0.1:8000/reservaciones/,1,0,1
+1794976666240,1,PERF-01 GET /reservaciones/ (Listado),200,OK,PERF-01 Grupo 1-26,text,true,,12331,240,1,1,http://127.0.0.1:8000/reservaciones/,1,0,1
+1794976666241,1,PERF-01 GET /reservaciones/ (Listado),200,OK,PERF-01 Grupo 1-26,text,true,,12331,240,1,1,http://127.0.0.1:8000/reservaciones/,1,0,1
+1794976666242,1,PERF-01 GET /reservaciones/ (Listado),200,OK,PERF-01 Grupo 1-26,text,true,,12331,240,1,1,http://127.0.0.1:8000/reservaciones/,1,0,1
+1794976666250,1,PERF-01 GET /reservaciones/ (Listado),200,OK,PERF-01 Grupo 1-31,text,true,,12331,240,1,1,http://127.0.0.1:8000/reservaciones/,1,0,1
+1794976666251,1,PERF-01 GET /reservaciones/ (Listado),200,OK,PERF-01 Grupo 1-31,text,true,,12331,240,1,1,http://127.0.0.1:8000/reservaciones/,1,0,1
+1794976666252,7,PERF-01 GET /reservaciones/ (Listado),200,OK,PERF-01 Grupo 1-31,text,true,,12331,240,1,1,http://127.0.0.1:8000/reservaciones/,7,0,1
+1794976666259,2,PERF-01 GET /reservaciones/ (Listado),200,OK,PERF-01 Grupo 1-31,text,true,,12331,240,1,1,http://127.0.0.1:8000/reservaciones/,2,0,1
+1794976666262,2,PERF-01 GET /reservaciones/ (Listado),200,OK,PERF-01 Grupo 1-31,text,true,,12331,240,1,1,http://127.0.0.1:8000/reservaciones/,2,0,1
+1794976666283,1,PERF-01 GET /reservaciones/ (Listado),200,OK,PERF-01 Grupo 1-32,text,true,,12331,240,1,1,http://127.0.0.1:8000/reservaciones/,1,0,1
+1794976666284,1,PERF-01 GET /reservaciones/ (Listado),200,OK,PERF-01 Grupo 1-32,text,true,,12331,240,1,1,http://127.0.0.1:8000/reservaciones/,1,0,1
+1794976666285,1,PERF-01 GET /reservaciones/ (Listado),200,OK,PERF-01 Grupo 1-32,text,true,,12331,240,1,1,http://127.0.0.1:8000/reservaciones/,1,0,1
+1794976666286,1,PERF-01 GET /reservaciones/ (Listado),200,OK,PERF-01 Grupo 1-32,text,true,,12331,240,1,1,http://127.0.0.1:8000/reservaciones/,1,0,1
+1794976666287,1,PERF-01 GET /reservaciones/ (Listado),200,OK,PERF-01 Grupo 1-32,text,true,,12331,240,1,1,http://127.0.0.1:8000/reservaciones/,1,0,1
+1794976666316,1,PERF-01 GET /reservaciones/ (Listado),200,OK,PERF-01 Grupo 1-30,text,true,,12331,240,1,1,http://127.0.0.1:8000/reservaciones/,1,0,1
+1794976666317,1,PERF-01 GET /reservaciones/ (Listado),200,OK,PERF-01 Grupo 1-30,text,true,,12331,240,1,1,http://127.0.0.1:8000/reservaciones/,1,0,1
+1794976666318,1,PERF-01 GET /reservaciones/ (Listado),200,OK,PERF-01 Grupo 1-30,text,true,,12331,240,1,1,http://127.0.0.1:8000/reservaciones/,1,0,1
+1794976666319,1,PERF-01 GET /reservaciones/ (Listado),200,OK,PERF-01 Grupo 1-30,text,true,,12331,240,1,1,http://127.0.0.1:8000/reservaciones/,1,0,1
+1794976666320,1,PERF-01 GET /reservaciones/ (Listado),200,OK,PERF-01 Grupo 1-30,text,true,,12331,240,1,1,http://127.0.0.1:8000/reservaciones/,1,0,1
+1794976666365,1,PERF-01 GET /reservaciones/ (Listado),200,OK,PERF-01 Grupo 1-33,text,true,,12331,240,1,1,http://127.0.0.1:8000/reservaciones/,1,0,1
+1794976666366,1,PERF-01 GET /reservaciones/ (Listado),200,OK,PERF-01 Grupo 1-33,text,true,,12331,240,1,1,http://127.0.0.1:8000/reservaciones/,1,0,1
+1794976666367,1,PERF-01 GET /reservaciones/ (Listado),200,OK,PERF-01 Grupo 1-33,text,true,,12331,240,1,1,http://127.0.0.1:8000/reservaciones/,1,0,1
+1794976666367,1,PERF-01 GET /reservaciones/ (Listado),200,OK,PERF-01 Grupo 1-33,text,true,,12331,240,1,1,http://127.0.0.1:8000/reservaciones/,1,0,1
+1794976666368,1,PERF-01 GET /reservaciones/ (Listado),200,OK,PERF-01 Grupo 1-33,text,true,,12331,240,1,1,http://127.0.0.1:8000/reservaciones/,1,0,1
+1794976666373,1,PERF-01 GET /reservaciones/ (Listado),200,OK,PERF-01 Grupo 1-34,text,true,,12331,240,1,1,http://127.0.0.1:8000/reservaciones/,1,0,1
+1794976666374,1,PERF-01 GET /reservaciones/ (Listado),200,OK,PERF-01 Grupo 1-34,text,true,,12331,240,1,1,http://127.0.0.1:8000/reservaciones/,1,0,1
+1794976666375,10,PERF-01 GET /reservaciones/ (Listado),200,OK,PERF-01 Grupo 1-34,text,true,,12331,240,1,1,http://127.0.0.1:8000/reservaciones/,10,0,1
+1794976666389,2,PERF-01 GET /reservaciones/ (Listado),200,OK,PERF-01 Grupo 1-28,text,true,,12331,240,1,1,http://127.0.0.1:8000/reservaciones/,2,0,1
+1794976666392,2,PERF-01 GET /reservaciones/ (Listado),200,OK,PERF-01 Grupo 1-28,text,true,,12331,240,1,1,http://127.0.0.1:8000/reservaciones/,2,0,1
+1794976666386,31,PERF-01 GET /reservaciones/ (Listado),200,OK,PERF-01 Grupo 1-34,text,true,,12331,240,1,1,http://127.0.0.1:8000/reservaciones/,31,0,1
+1794976666417,2,PERF-01 GET /reservaciones/ (Listado),200,OK,PERF-01 Grupo 1-34,text,true,,12331,240,1,1,http://127.0.0.1:8000/reservaciones/,2,0,1
+1794976666394,2,PERF-01 GET /reservaciones/ (Listado),200,OK,PERF-01 Grupo 1-28,text,true,,12331,240,1,1,http://127.0.0.1:8000/reservaciones/,2,0,1
+1794976666420,2,PERF-01 GET /reservaciones/ (Listado),200,OK,PERF-01 Grupo 1-28,text,true,,12331,240,1,1,http://127.0.0.1:8000/reservaciones/,2,0,1
+1794976666423,2,PERF-01 GET /reservaciones/ (Listado),200,OK,PERF-01 Grupo 1-28,text,true,,12331,240,1,1,http://127.0.0.1:8000/reservaciones/,2,0,1
+1794976666470,3,PERF-01 GET /reservaciones/ (Listado),200,OK,PERF-01 Grupo 1-37,text,true,,12331,240,1,1,http://127.0.0.1:8000/reservaciones/,3,0,1
+1794976666474,2,PERF-01 GET /reservaciones/ (Listado),200,OK,PERF-01 Grupo 1-37,text,true,,12331,240,1,1,http://127.0.0.1:8000/reservaciones/,2,0,1
+1794976666476,1,PERF-01 GET /reservaciones/ (Listado),200,OK,PERF-01 Grupo 1-37,text,true,,12331,240,1,1,http://127.0.0.1:8000/reservaciones/,1,0,1
+1794976666477,1,PERF-01 GET /reservaciones/ (Listado),200,OK,PERF-01 Grupo 1-37,text,true,,12331,240,1,1,http://127.0.0.1:8000/reservaciones/,1,0,1
+1794976666478,1,PERF-01 GET /reservaciones/ (Listado),200,OK,PERF-01 Grupo 1-37,text,true,,12331,240,1,1,http://127.0.0.1:8000/reservaciones/,1,0,1
+1794976666509,1,PERF-01 GET /reservaciones/ (Listado),200,OK,PERF-01 Grupo 1-35,text,true,,12331,240,1,1,http://127.0.0.1:8000/reservaciones/,1,0,1
+1794976666510,1,PERF-01 GET /reservaciones/ (Listado),200,OK,PERF-01 Grupo 1-35,text,true,,12331,240,1,1,http://127.0.0.1:8000/reservaciones/,1,0,1
+1794976666511,1,PERF-01 GET /reservaciones/ (Listado),200,OK,PERF-01 Grupo 1-35,text,true,,12331,240,1,1,http://127.0.0.1:8000/reservaciones/,1,0,1
+1794976666512,1,PERF-01 GET /reservaciones/ (Listado),200,OK,PERF-01 Grupo 1-35,text,true,,12331,240,1,1,http://127.0.0.1:8000/reservaciones/,1,0,1
+1794976666522,1,PERF-01 GET /reservaciones/ (Listado),200,OK,PERF-01 Grupo 1-39,text,true,,12331,240,1,1,http://127.0.0.1:8000/reservaciones/,1,0,1
+1794976666523,1,PERF-01 GET /reservaciones/ (Listado),200,OK,PERF-01 Grupo 1-39,text,true,,12331,240,1,1,http://127.0.0.1:8000/reservaciones/,1,0,1
+1794976666524,1,PERF-01 GET /reservaciones/ (Listado),200,OK,PERF-01 Grupo 1-39,text,true,,12331,240,1,1,http://127.0.0.1:8000/reservaciones/,1,0,1
+1794976666525,1,PERF-01 GET /reservaciones/ (Listado),200,OK,PERF-01 Grupo 1-39,text,true,,12331,240,1,1,http://127.0.0.1:8000/reservaciones/,1,0,1
+1794976666526,1,PERF-01 GET /reservaciones/ (Listado),200,OK,PERF-01 Grupo 1-39,text,true,,12331,240,1,1,http://127.0.0.1:8000/reservaciones/,1,0,1
+1794976666513,23,PERF-01 GET /reservaciones/ (Listado),200,OK,PERF-01 Grupo 1-35,text,true,,12331,240,1,1,http://127.0.0.1:8000/reservaciones/,23,0,1
+1794976666540,15,PERF-01 GET /reservaciones/ (Listado),200,OK,PERF-01 Grupo 1-40,text,true,,12331,240,1,1,http://127.0.0.1:8000/reservaciones/,15,0,1
+1794976666556,2,PERF-01 GET /reservaciones/ (Listado),200,OK,PERF-01 Grupo 1-40,text,true,,12331,240,1,1,http://127.0.0.1:8000/reservaciones/,2,0,1
+1794976666558,4,PERF-01 GET /reservaciones/ (Listado),200,OK,PERF-01 Grupo 1-40,text,true,,12331,240,1,1,http://127.0.0.1:8000/reservaciones/,4,0,1
+1794976666562,2,PERF-01 GET /reservaciones/ (Listado),200,OK,PERF-01 Grupo 1-40,text,true,,12331,240,1,1,http://127.0.0.1:8000/reservaciones/,2,0,1
+1794976666575,1,PERF-01 GET /reservaciones/ (Listado),200,OK,PERF-01 Grupo 1-36,text,true,,12331,240,1,1,http://127.0.0.1:8000/reservaciones/,1,0,1
+1794976666576,1,PERF-01 GET /reservaciones/ (Listado),200,OK,PERF-01 Grupo 1-36,text,true,,12331,240,1,1,http://127.0.0.1:8000/reservaciones/,1,0,1
+1794976666576,1,PERF-01 GET /reservaciones/ (Listado),200,OK,PERF-01 Grupo 1-36,text,true,,12331,240,1,1,http://127.0.0.1:8000/reservaciones/,1,0,1
+1794976666577,1,PERF-01 GET /reservaciones/ (Listado),200,OK,PERF-01 Grupo 1-36,text,true,,12331,240,1,1,http://127.0.0.1:8000/reservaciones/,1,0,1
+1794976666578,1,PERF-01 GET /reservaciones/ (Listado),200,OK,PERF-01 Grupo 1-36,text,true,,12331,240,1,1,http://127.0.0.1:8000/reservaciones/,1,0,1
+1794976666565,17,PERF-01 GET /reservaciones/ (Listado),200,OK,PERF-01 Grupo 1-40,text,true,,12331,240,1,1,http://127.0.0.1:8000/reservaciones/,17,0,1
+1794976666588,1,PERF-01 GET /reservaciones/ (Listado),200,OK,PERF-01 Grupo 1-38,text,true,,12331,240,1,1,http://127.0.0.1:8000/reservaciones/,1,0,1
+1794976666589,1,PERF-01 GET /reservaciones/ (Listado),200,OK,PERF-01 Grupo 1-38,text,true,,12331,240,1,1,http://127.0.0.1:8000/reservaciones/,1,0,1
+1794976666590,1,PERF-01 GET /reservaciones/ (Listado),200,OK,PERF-01 Grupo 1-38,text,true,,12331,240,1,1,http://127.0.0.1:8000/reservaciones/,1,0,1
+1794976666591,1,PERF-01 GET /reservaciones/ (Listado),200,OK,PERF-01 Grupo 1-38,text,true,,12331,240,1,1,http://127.0.0.1:8000/reservaciones/,1,0,1
+1794976666605,1,PERF-01 GET /reservaciones/ (Listado),200,OK,PERF-01 Grupo 1-42,text,true,,12331,240,1,1,http://127.0.0.1:8000/reservaciones/,1,0,1
+1794976666606,1,PERF-01 GET /reservaciones/ (Listado),200,OK,PERF-01 Grupo 1-42,text,true,,12331,240,1,1,http://127.0.0.1:8000/reservaciones/,1,0,1
+1794976666607,1,PERF-01 GET /reservaciones/ (Listado),200,OK,PERF-01 Grupo 1-42,text,true,,12331,240,1,1,http://127.0.0.1:8000/reservaciones/,1,0,1
+1794976666608,1,PERF-01 GET /reservaciones/ (Listado),200,OK,PERF-01 Grupo 1-42,text,true,,12331,240,1,1,http://127.0.0.1:8000/reservaciones/,1,0,1
+1794976666609,1,PERF-01 GET /reservaciones/ (Listado),200,OK,PERF-01 Grupo 1-42,text,true,,12331,240,1,1,http://127.0.0.1:8000/reservaciones/,1,0,1
+1794976666616,1,PERF-01 GET /reservaciones/ (Listado),200,OK,PERF-01 Grupo 1-41,text,true,,12331,240,1,1,http://127.0.0.1:8000/reservaciones/,1,0,1
+1794976666617,2,PERF-01 GET /reservaciones/ (Listado),200,OK,PERF-01 Grupo 1-41,text,true,,12331,240,1,1,http://127.0.0.1:8000/reservaciones/,2,0,1
+1794976666619,2,PERF-01 GET /reservaciones/ (Listado),200,OK,PERF-01 Grupo 1-41,text,true,,12331,240,1,1,http://127.0.0.1:8000/reservaciones/,2,0,1
+1794976666622,2,PERF-01 GET /reservaciones/ (Listado),200,OK,PERF-01 Grupo 1-41,text,true,,12331,240,1,1,http://127.0.0.1:8000/reservaciones/,2,0,1
+1794976666624,2,PERF-01 GET /reservaciones/ (Listado),200,OK,PERF-01 Grupo 1-41,text,true,,12331,240,1,1,http://127.0.0.1:8000/reservaciones/,2,0,1
+1794976666592,36,PERF-01 GET /reservaciones/ (Listado),200,OK,PERF-01 Grupo 1-38,text,true,,12331,240,1,1,http://127.0.0.1:8000/reservaciones/,36,0,1
+1794976666631,1,PERF-01 GET /reservaciones/ (Listado),200,OK,PERF-01 Grupo 1-44,text,true,,12331,240,1,1,http://127.0.0.1:8000/reservaciones/,1,0,1
+1794976666632,1,PERF-01 GET /reservaciones/ (Listado),200,OK,PERF-01 Grupo 1-44,text,true,,12331,240,1,1,http://127.0.0.1:8000/reservaciones/,1,0,1
+1794976666633,1,PERF-01 GET /reservaciones/ (Listado),200,OK,PERF-01 Grupo 1-44,text,true,,12331,240,1,1,http://127.0.0.1:8000/reservaciones/,1,0,1
+1794976666634,1,PERF-01 GET /reservaciones/ (Listado),200,OK,PERF-01 Grupo 1-44,text,true,,12331,240,1,1,http://127.0.0.1:8000/reservaciones/,1,0,1
+1794976666635,1,PERF-01 GET /reservaciones/ (Listado),200,OK,PERF-01 Grupo 1-44,text,true,,12331,240,1,1,http://127.0.0.1:8000/reservaciones/,1,0,1
+1794976666671,1,PERF-01 GET /reservaciones/ (Listado),200,OK,PERF-01 Grupo 1-43,text,true,,12331,240,1,1,http://127.0.0.1:8000/reservaciones/,1,0,1
+1794976666672,1,PERF-01 GET /reservaciones/ (Listado),200,OK,PERF-01 Grupo 1-43,text,true,,12331,240,1,1,http://127.0.0.1:8000/reservaciones/,1,0,1
+1794976666673,7,PERF-01 GET /reservaciones/ (Listado),200,OK,PERF-01 Grupo 1-43,text,true,,12331,240,1,1,http://127.0.0.1:8000/reservaciones/,7,0,1
+1794976666680,3,PERF-01 GET /reservaciones/ (Listado),200,OK,PERF-01 Grupo 1-43,text,true,,12331,240,1,1,http://127.0.0.1:8000/reservaciones/,3,0,1
+1794976666684,3,PERF-01 GET /reservaciones/ (Listado),200,OK,PERF-01 Grupo 1-43,text,true,,12331,240,1,1,http://127.0.0.1:8000/reservaciones/,3,0,1
+1794976666689,1,PERF-01 GET /reservaciones/ (Listado),200,OK,PERF-01 Grupo 1-45,text,true,,12331,240,1,1,http://127.0.0.1:8000/reservaciones/,1,0,1
+1794976666694,1,PERF-01 GET /reservaciones/ (Listado),200,OK,PERF-01 Grupo 1-46,text,true,,12331,240,1,1,http://127.0.0.1:8000/reservaciones/,1,0,1
+1794976666695,1,PERF-01 GET /reservaciones/ (Listado),200,OK,PERF-01 Grupo 1-46,text,true,,12331,240,1,1,http://127.0.0.1:8000/reservaciones/,1,0,1
+1794976666690,6,PERF-01 GET /reservaciones/ (Listado),200,OK,PERF-01 Grupo 1-45,text,true,,12331,240,1,1,http://127.0.0.1:8000/reservaciones/,6,0,1
+1794976666702,2,PERF-01 GET /reservaciones/ (Listado),200,OK,PERF-01 Grupo 1-48,text,true,,12331,240,1,1,http://127.0.0.1:8000/reservaciones/,2,0,1
+1794976666697,8,PERF-01 GET /reservaciones/ (Listado),200,OK,PERF-01 Grupo 1-45,text,true,,12331,240,1,1,http://127.0.0.1:8000/reservaciones/,8,0,1
+1794976666705,1,PERF-01 GET /reservaciones/ (Listado),200,OK,PERF-01 Grupo 1-45,text,true,,12331,240,1,1,http://127.0.0.1:8000/reservaciones/,1,0,1
+1794976666696,13,PERF-01 GET /reservaciones/ (Listado),200,OK,PERF-01 Grupo 1-46,text,true,,12331,240,1,1,http://127.0.0.1:8000/reservaciones/,13,0,1
+1794976666707,3,PERF-01 GET /reservaciones/ (Listado),200,OK,PERF-01 Grupo 1-45,text,true,,12331,240,1,1,http://127.0.0.1:8000/reservaciones/,3,0,1
+1794976666704,8,PERF-01 GET /reservaciones/ (Listado),200,OK,PERF-01 Grupo 1-48,text,true,,12331,240,1,1,http://127.0.0.1:8000/reservaciones/,8,0,1
+1794976666709,4,PERF-01 GET /reservaciones/ (Listado),200,OK,PERF-01 Grupo 1-46,text,true,,12331,240,1,1,http://127.0.0.1:8000/reservaciones/,4,0,1
+1794976666712,3,PERF-01 GET /reservaciones/ (Listado),200,OK,PERF-01 Grupo 1-47,text,true,,12331,240,1,1,http://127.0.0.1:8000/reservaciones/,3,0,1
+1794976666713,3,PERF-01 GET /reservaciones/ (Listado),200,OK,PERF-01 Grupo 1-48,text,true,,12331,240,1,1,http://127.0.0.1:8000/reservaciones/,3,0,1
+1794976666714,3,PERF-01 GET /reservaciones/ (Listado),200,OK,PERF-01 Grupo 1-46,text,true,,12331,240,1,1,http://127.0.0.1:8000/reservaciones/,3,0,1
+1794976666715,2,PERF-01 GET /reservaciones/ (Listado),200,OK,PERF-01 Grupo 1-47,text,true,,12331,240,1,1,http://127.0.0.1:8000/reservaciones/,2,0,1
+1794976666716,2,PERF-01 GET /reservaciones/ (Listado),200,OK,PERF-01 Grupo 1-48,text,true,,12331,240,1,1,http://127.0.0.1:8000/reservaciones/,2,0,1
+1794976666718,2,PERF-01 GET /reservaciones/ (Listado),200,OK,PERF-01 Grupo 1-47,text,true,,12331,240,1,1,http://127.0.0.1:8000/reservaciones/,2,0,1
+1794976666719,2,PERF-01 GET /reservaciones/ (Listado),200,OK,PERF-01 Grupo 1-48,text,true,,12331,240,1,1,http://127.0.0.1:8000/reservaciones/,2,0,1
+1794976666720,1,PERF-01 GET /reservaciones/ (Listado),200,OK,PERF-01 Grupo 1-47,text,true,,12331,240,1,1,http://127.0.0.1:8000/reservaciones/,1,0,1
+1794976666722,1,PERF-01 GET /reservaciones/ (Listado),200,OK,PERF-01 Grupo 1-47,text,true,,12331,240,1,1,http://127.0.0.1:8000/reservaciones/,1,0,1
+1794976666726,1,PERF-01 GET /reservaciones/ (Listado),200,OK,PERF-01 Grupo 1-50,text,true,,12331,240,1,1,http://127.0.0.1:8000/reservaciones/,1,0,1
+1794976666727,1,PERF-01 GET /reservaciones/ (Listado),200,OK,PERF-01 Grupo 1-50,text,true,,12331,240,1,1,http://127.0.0.1:8000/reservaciones/,1,0,1
+1794976666728,1,PERF-01 GET /reservaciones/ (Listado),200,OK,PERF-01 Grupo 1-50,text,true,,12331,240,1,1,http://127.0.0.1:8000/reservaciones/,1,0,1
+1794976666729,1,PERF-01 GET /reservaciones/ (Listado),200,OK,PERF-01 Grupo 1-50,text,true,,12331,240,1,1,http://127.0.0.1:8000/reservaciones/,1,0,1
+1794976666730,1,PERF-01 GET /reservaciones/ (Listado),200,OK,PERF-01 Grupo 1-50,text,true,,12331,240,1,1,http://127.0.0.1:8000/reservaciones/,1,0,1
+1794976666736,1,PERF-01 GET /reservaciones/ (Listado),200,OK,PERF-01 Grupo 1-49,text,true,,12331,240,1,1,http://127.0.0.1:8000/reservaciones/,1,0,1
+1794976666737,1,PERF-01 GET /reservaciones/ (Listado),200,OK,PERF-01 Grupo 1-49,text,true,,12331,240,1,1,http://127.0.0.1:8000/reservaciones/,1,0,1
+1794976666738,1,PERF-01 GET /reservaciones/ (Listado),200,OK,PERF-01 Grupo 1-49,text,true,,12331,240,1,1,http://127.0.0.1:8000/reservaciones/,1,0,1
+1794976666739,1,PERF-01 GET /reservaciones/ (Listado),200,OK,PERF-01 Grupo 1-49,text,true,,12331,240,1,1,http://127.0.0.1:8000/reservaciones/,1,0,1
+1794976666740,1,PERF-01 GET /reservaciones/ (Listado),200,OK,PERF-01 Grupo 1-49,text,true,,12331,240,1,1,http://127.0.0.1:8000/reservaciones/,1,0,1
+1794976666903,6,PERF-02 POST /reservaciones/nueva/ (Sin Conflicto),200,OK,PERF-02 Grupo 2-1,text,true,,14657,240,1,1,http://127.0.0.1:8000/reservaciones/,6,0,1
+1794976666912,3,PERF-02 POST /reservaciones/nueva/ (Sin Conflicto),200,OK,PERF-02 Grupo 2-1,text,true,,16494,240,1,1,http://127.0.0.1:8000/reservaciones/,3,0,1
+1794976666917,6,PERF-02 POST /reservaciones/nueva/ (Sin Conflicto),200,OK,PERF-02 Grupo 2-1,text,true,,18331,240,1,1,http://127.0.0.1:8000/reservaciones/,6,0,1
+1794976666932,6,PERF-02 POST /reservaciones/nueva/ (Sin Conflicto),200,OK,PERF-02 Grupo 2-2,text,true,,14657,240,1,1,http://127.0.0.1:8000/reservaciones/,6,0,1
+1794976666940,5,PERF-02 POST /reservaciones/nueva/ (Sin Conflicto),200,OK,PERF-02 Grupo 2-2,text,true,,16494,240,1,1,http://127.0.0.1:8000/reservaciones/,5,0,1
+1794976666950,5,PERF-02 POST /reservaciones/nueva/ (Sin Conflicto),200,OK,PERF-02 Grupo 2-2,text,true,,18331,240,1,1,http://127.0.0.1:8000/reservaciones/,5,0,1
+1794976666967,3,PERF-02 POST /reservaciones/nueva/ (Sin Conflicto),200,OK,PERF-02 Grupo 2-3,text,true,,14657,240,1,1,http://127.0.0.1:8000/reservaciones/,3,0,1
+1794976666973,3,PERF-02 POST /reservaciones/nueva/ (Sin Conflicto),200,OK,PERF-02 Grupo 2-3,text,true,,16494,240,1,1,http://127.0.0.1:8000/reservaciones/,3,0,1
+1794976666978,3,PERF-02 POST /reservaciones/nueva/ (Sin Conflicto),200,OK,PERF-02 Grupo 2-3,text,true,,18331,240,1,1,http://127.0.0.1:8000/reservaciones/,3,0,1
+1794976667002,3,PERF-02 POST /reservaciones/nueva/ (Sin Conflicto),200,OK,PERF-02 Grupo 2-4,text,true,,14657,240,1,1,http://127.0.0.1:8000/reservaciones/,3,0,1
+1794976667007,3,PERF-02 POST /reservaciones/nueva/ (Sin Conflicto),200,OK,PERF-02 Grupo 2-4,text,true,,16494,240,1,1,http://127.0.0.1:8000/reservaciones/,3,0,1
+1794976667013,3,PERF-02 POST /reservaciones/nueva/ (Sin Conflicto),200,OK,PERF-02 Grupo 2-4,text,true,,18331,240,1,1,http://127.0.0.1:8000/reservaciones/,3,0,1
+1794976667036,3,PERF-02 POST /reservaciones/nueva/ (Sin Conflicto),200,OK,PERF-02 Grupo 2-5,text,true,,14657,240,1,1,http://127.0.0.1:8000/reservaciones/,3,0,1
+1794976667041,3,PERF-02 POST /reservaciones/nueva/ (Sin Conflicto),200,OK,PERF-02 Grupo 2-5,text,true,,16494,240,1,1,http://127.0.0.1:8000/reservaciones/,3,0,1
+1794976667046,3,PERF-02 POST /reservaciones/nueva/ (Sin Conflicto),200,OK,PERF-02 Grupo 2-5,text,true,,18331,240,1,1,http://127.0.0.1:8000/reservaciones/,3,0,1
+1794976667062,5,PERF-02 POST /reservaciones/nueva/ (Sin Conflicto),200,OK,PERF-02 Grupo 2-6,text,true,,14657,240,1,1,http://127.0.0.1:8000/reservaciones/,5,0,1
+1794976667069,3,PERF-02 POST /reservaciones/nueva/ (Sin Conflicto),200,OK,PERF-02 Grupo 2-6,text,true,,16494,240,1,1,http://127.0.0.1:8000/reservaciones/,3,0,1
+1794976667074,3,PERF-02 POST /reservaciones/nueva/ (Sin Conflicto),200,OK,PERF-02 Grupo 2-6,text,true,,18331,240,1,1,http://127.0.0.1:8000/reservaciones/,3,0,1
+1794976667109,5,PERF-02 POST /reservaciones/nueva/ (Sin Conflicto),200,OK,PERF-02 Grupo 2-7,text,true,,14657,240,1,1,http://127.0.0.1:8000/reservaciones/,5,0,1
+1794976667116,3,PERF-02 POST /reservaciones/nueva/ (Sin Conflicto),200,OK,PERF-02 Grupo 2-7,text,true,,16494,240,1,1,http://127.0.0.1:8000/reservaciones/,3,0,1
+1794976667121,3,PERF-02 POST /reservaciones/nueva/ (Sin Conflicto),200,OK,PERF-02 Grupo 2-7,text,true,,18331,240,1,1,http://127.0.0.1:8000/reservaciones/,3,0,1
+1794976667138,3,PERF-02 POST /reservaciones/nueva/ (Sin Conflicto),200,OK,PERF-02 Grupo 2-8,text,true,,14657,240,1,1,http://127.0.0.1:8000/reservaciones/,3,0,1
+1794976667143,3,PERF-02 POST /reservaciones/nueva/ (Sin Conflicto),200,OK,PERF-02 Grupo 2-8,text,true,,16494,240,1,1,http://127.0.0.1:8000/reservaciones/,3,0,1
+1794976667148,3,PERF-02 POST /reservaciones/nueva/ (Sin Conflicto),200,OK,PERF-02 Grupo 2-8,text,true,,18331,240,1,1,http://127.0.0.1:8000/reservaciones/,3,0,1
+1794976667163,6,PERF-02 POST /reservaciones/nueva/ (Sin Conflicto),200,OK,PERF-02 Grupo 2-9,text,true,,14657,240,1,1,http://127.0.0.1:8000/reservaciones/,6,0,1
+1794976667173,6,PERF-02 POST /reservaciones/nueva/ (Sin Conflicto),200,OK,PERF-02 Grupo 2-9,text,true,,16494,240,1,1,http://127.0.0.1:8000/reservaciones/,6,0,1
+1794976667180,3,PERF-02 POST /reservaciones/nueva/ (Sin Conflicto),200,OK,PERF-02 Grupo 2-9,text,true,,18331,240,1,1,http://127.0.0.1:8000/reservaciones/,3,0,1
+1794976667209,5,PERF-02 POST /reservaciones/nueva/ (Sin Conflicto),200,OK,PERF-02 Grupo 2-10,text,true,,14657,240,1,1,http://127.0.0.1:8000/reservaciones/,5,0,1
+1794976667216,3,PERF-02 POST /reservaciones/nueva/ (Sin Conflicto),200,OK,PERF-02 Grupo 2-10,text,true,,16494,240,1,1,http://127.0.0.1:8000/reservaciones/,3,0,1
+1794976667222,3,PERF-02 POST /reservaciones/nueva/ (Sin Conflicto),200,OK,PERF-02 Grupo 2-10,text,true,,18331,240,1,1,http://127.0.0.1:8000/reservaciones/,3,0,1
+1794976667242,7,PERF-02 POST /reservaciones/nueva/ (Sin Conflicto),200,OK,PERF-02 Grupo 2-11,text,true,,14657,240,1,1,http://127.0.0.1:8000/reservaciones/,7,0,1
+1794976667260,8,PERF-02 POST /reservaciones/nueva/ (Sin Conflicto),200,OK,PERF-02 Grupo 2-11,text,true,,16494,240,1,1,http://127.0.0.1:8000/reservaciones/,8,0,1
+1794976667272,5,PERF-02 POST /reservaciones/nueva/ (Sin Conflicto),200,OK,PERF-02 Grupo 2-11,text,true,,18331,240,1,1,http://127.0.0.1:8000/reservaciones/,5,0,1
+1794976667305,6,PERF-02 POST /reservaciones/nueva/ (Sin Conflicto),200,OK,PERF-02 Grupo 2-12,text,true,,14657,240,1,1,http://127.0.0.1:8000/reservaciones/,6,0,1
+1794976667313,4,PERF-02 POST /reservaciones/nueva/ (Sin Conflicto),200,OK,PERF-02 Grupo 2-12,text,true,,16494,240,1,1,http://127.0.0.1:8000/reservaciones/,4,0,1
+1794976667319,3,PERF-02 POST /reservaciones/nueva/ (Sin Conflicto),200,OK,PERF-02 Grupo 2-12,text,true,,18331,240,1,1,http://127.0.0.1:8000/reservaciones/,3,0,1
+1794976667340,9,PERF-02 POST /reservaciones/nueva/ (Sin Conflicto),200,OK,PERF-02 Grupo 2-13,text,true,,14657,240,1,1,http://127.0.0.1:8000/reservaciones/,9,0,1
+1794976667352,3,PERF-02 POST /reservaciones/nueva/ (Sin Conflicto),200,OK,PERF-02 Grupo 2-13,text,true,,16494,240,1,1,http://127.0.0.1:8000/reservaciones/,3,0,1
+1794976667357,3,PERF-02 POST /reservaciones/nueva/ (Sin Conflicto),200,OK,PERF-02 Grupo 2-13,text,true,,18331,240,1,1,http://127.0.0.1:8000/reservaciones/,3,0,1
+1794976667405,3,PERF-02 POST /reservaciones/nueva/ (Sin Conflicto),200,OK,PERF-02 Grupo 2-15,text,true,,14657,240,1,1,http://127.0.0.1:8000/reservaciones/,3,0,1
+1794976667412,4,PERF-02 POST /reservaciones/nueva/ (Sin Conflicto),200,OK,PERF-02 Grupo 2-15,text,true,,16494,240,1,1,http://127.0.0.1:8000/reservaciones/,4,0,1
+1794976667427,14,PERF-02 POST /reservaciones/nueva/ (Sin Conflicto),200,OK,PERF-02 Grupo 2-15,text,true,,18331,240,1,1,http://127.0.0.1:8000/reservaciones/,14,0,1
+1794976667430,13,PERF-02 POST /reservaciones/nueva/ (Sin Conflicto),200,OK,PERF-02 Grupo 2-14,text,true,,14657,240,1,1,http://127.0.0.1:8000/reservaciones/,13,0,1
+1794976667450,14,PERF-02 POST /reservaciones/nueva/ (Sin Conflicto),200,OK,PERF-02 Grupo 2-14,text,true,,16494,240,1,1,http://127.0.0.1:8000/reservaciones/,14,0,1
+1794976667458,11,PERF-02 POST /reservaciones/nueva/ (Sin Conflicto),200,OK,PERF-02 Grupo 2-16,text,true,,14657,240,1,1,http://127.0.0.1:8000/reservaciones/,11,0,1
+1794976667479,10,PERF-02 POST /reservaciones/nueva/ (Sin Conflicto),200,OK,PERF-02 Grupo 2-17,text,true,,14657,240,1,1,http://127.0.0.1:8000/reservaciones/,10,0,1
+1794976667484,11,PERF-02 POST /reservaciones/nueva/ (Sin Conflicto),200,OK,PERF-02 Grupo 2-16,text,true,,16494,240,1,1,http://127.0.0.1:8000/reservaciones/,11,0,1
+1794976667469,46,PERF-02 POST /reservaciones/nueva/ (Sin Conflicto),200,OK,PERF-02 Grupo 2-14,text,true,,18331,240,1,1,http://127.0.0.1:8000/reservaciones/,46,0,1
+1794976667502,24,PERF-02 POST /reservaciones/nueva/ (Sin Conflicto),200,OK,PERF-02 Grupo 2-16,text,true,,18331,240,1,1,http://127.0.0.1:8000/reservaciones/,24,0,1
+1794976667524,6,PERF-02 POST /reservaciones/nueva/ (Sin Conflicto),200,OK,PERF-02 Grupo 2-18,text,true,,14657,240,1,1,http://127.0.0.1:8000/reservaciones/,6,0,1
+1794976667532,4,PERF-02 POST /reservaciones/nueva/ (Sin Conflicto),200,OK,PERF-02 Grupo 2-18,text,true,,16494,240,1,1,http://127.0.0.1:8000/reservaciones/,4,0,1
+1794976667546,9,PERF-02 POST /reservaciones/nueva/ (Sin Conflicto),200,OK,PERF-02 Grupo 2-18,text,true,,18331,240,1,1,http://127.0.0.1:8000/reservaciones/,9,0,1
+1794976667552,13,PERF-02 POST /reservaciones/nueva/ (Sin Conflicto),200,OK,PERF-02 Grupo 2-19,text,true,,14657,240,1,1,http://127.0.0.1:8000/reservaciones/,13,0,1
+1794976667564,17,PERF-02 POST /reservaciones/nueva/ (Sin Conflicto),200,OK,PERF-02 Grupo 2-20,text,true,,14657,240,1,1,http://127.0.0.1:8000/reservaciones/,17,0,1
+1794976667573,15,PERF-02 POST /reservaciones/nueva/ (Sin Conflicto),200,OK,PERF-02 Grupo 2-19,text,true,,16494,240,1,1,http://127.0.0.1:8000/reservaciones/,15,0,1
+1794976667594,16,PERF-02 POST /reservaciones/nueva/ (Sin Conflicto),200,OK,PERF-02 Grupo 2-20,text,true,,16494,240,1,1,http://127.0.0.1:8000/reservaciones/,16,0,1
+1794976667507,104,PERF-02 POST /reservaciones/nueva/ (Sin Conflicto),200,OK,PERF-02 Grupo 2-17,text,true,,16494,240,1,1,http://127.0.0.1:8000/reservaciones/,104,0,1
+1794976667595,30,PERF-02 POST /reservaciones/nueva/ (Sin Conflicto),200,OK,PERF-02 Grupo 2-19,text,true,,18331,240,1,1,http://127.0.0.1:8000/reservaciones/,30,0,1
+1794976667623,10,PERF-02 POST /reservaciones/nueva/ (Sin Conflicto),200,OK,PERF-02 Grupo 2-20,text,true,,18331,240,1,1,http://127.0.0.1:8000/reservaciones/,10,0,1
+1794976667624,11,PERF-02 POST /reservaciones/nueva/ (Sin Conflicto),200,OK,PERF-02 Grupo 2-17,text,true,,18331,240,1,1,http://127.0.0.1:8000/reservaciones/,11,0,1
+1794976667619,20,PERF-02 POST /reservaciones/nueva/ (Sin Conflicto),200,OK,PERF-02 Grupo 2-21,text,true,,14657,240,1,1,http://127.0.0.1:8000/reservaciones/,20,0,1
+1794976667641,12,PERF-02 POST /reservaciones/nueva/ (Sin Conflicto),200,OK,PERF-02 Grupo 2-21,text,true,,16494,240,1,1,http://127.0.0.1:8000/reservaciones/,12,0,1
+1794976667651,17,PERF-02 POST /reservaciones/nueva/ (Sin Conflicto),200,OK,PERF-02 Grupo 2-22,text,true,,14657,240,1,1,http://127.0.0.1:8000/reservaciones/,17,0,1
+1794976667661,10,PERF-02 POST /reservaciones/nueva/ (Sin Conflicto),200,OK,PERF-02 Grupo 2-21,text,true,,18331,240,1,1,http://127.0.0.1:8000/reservaciones/,10,0,1
+1794976667675,4,PERF-02 POST /reservaciones/nueva/ (Sin Conflicto),200,OK,PERF-02 Grupo 2-22,text,true,,16494,240,1,1,http://127.0.0.1:8000/reservaciones/,4,0,1
+1794976667683,7,PERF-02 POST /reservaciones/nueva/ (Sin Conflicto),200,OK,PERF-02 Grupo 2-22,text,true,,18331,240,1,1,http://127.0.0.1:8000/reservaciones/,7,0,1
+1794976667694,3,PERF-02 POST /reservaciones/nueva/ (Sin Conflicto),200,OK,PERF-02 Grupo 2-23,text,true,,14657,240,1,1,http://127.0.0.1:8000/reservaciones/,3,0,1
+1794976667705,12,PERF-02 POST /reservaciones/nueva/ (Sin Conflicto),200,OK,PERF-02 Grupo 2-23,text,true,,16494,240,1,1,http://127.0.0.1:8000/reservaciones/,12,0,1
+1794976667707,19,PERF-02 POST /reservaciones/nueva/ (Sin Conflicto),200,OK,PERF-02 Grupo 2-24,text,true,,14657,240,1,1,http://127.0.0.1:8000/reservaciones/,19,0,1
+1794976667725,10,PERF-02 POST /reservaciones/nueva/ (Sin Conflicto),200,OK,PERF-02 Grupo 2-23,text,true,,18331,240,1,1,http://127.0.0.1:8000/reservaciones/,10,0,1
+1794976667738,8,PERF-02 POST /reservaciones/nueva/ (Sin Conflicto),200,OK,PERF-02 Grupo 2-25,text,true,,14668,240,1,1,http://127.0.0.1:8000/reservaciones/,8,0,1
+1794976667742,9,PERF-02 POST /reservaciones/nueva/ (Sin Conflicto),200,OK,PERF-02 Grupo 2-24,text,true,,16505,240,1,1,http://127.0.0.1:8000/reservaciones/,9,0,1
+1794976667756,14,PERF-02 POST /reservaciones/nueva/ (Sin Conflicto),200,OK,PERF-02 Grupo 2-24,text,true,,18353,240,1,1,http://127.0.0.1:8000/reservaciones/,14,0,1
+1794976667766,10,PERF-02 POST /reservaciones/nueva/ (Sin Conflicto),200,OK,PERF-02 Grupo 2-26,text,true,,14668,240,1,1,http://127.0.0.1:8000/reservaciones/,10,0,1
+1794976667778,4,PERF-02 POST /reservaciones/nueva/ (Sin Conflicto),200,OK,PERF-02 Grupo 2-26,text,true,,16516,240,1,1,http://127.0.0.1:8000/reservaciones/,4,0,1
+1794976667759,36,PERF-02 POST /reservaciones/nueva/ (Sin Conflicto),200,OK,PERF-02 Grupo 2-25,text,true,,16516,240,1,1,http://127.0.0.1:8000/reservaciones/,36,0,1
+1794976667786,13,PERF-02 POST /reservaciones/nueva/ (Sin Conflicto),200,OK,PERF-02 Grupo 2-26,text,true,,18364,240,1,1,http://127.0.0.1:8000/reservaciones/,13,0,1
+1794976667799,6,PERF-02 POST /reservaciones/nueva/ (Sin Conflicto),200,OK,PERF-02 Grupo 2-25,text,true,,18364,240,1,1,http://127.0.0.1:8000/reservaciones/,6,0,1
+1794976667801,6,PERF-02 POST /reservaciones/nueva/ (Sin Conflicto),200,OK,PERF-02 Grupo 2-27,text,true,,14668,240,1,1,http://127.0.0.1:8000/reservaciones/,6,0,1
+1794976667810,4,PERF-02 POST /reservaciones/nueva/ (Sin Conflicto),200,OK,PERF-02 Grupo 2-27,text,true,,16516,240,1,1,http://127.0.0.1:8000/reservaciones/,4,0,1
+1794976667817,9,PERF-02 POST /reservaciones/nueva/ (Sin Conflicto),200,OK,PERF-02 Grupo 2-27,text,true,,18364,240,1,1,http://127.0.0.1:8000/reservaciones/,9,0,1
+1794976667823,7,PERF-02 POST /reservaciones/nueva/ (Sin Conflicto),200,OK,PERF-02 Grupo 2-28,text,true,,14668,240,1,1,http://127.0.0.1:8000/reservaciones/,7,0,1
+1794976667832,3,PERF-02 POST /reservaciones/nueva/ (Sin Conflicto),200,OK,PERF-02 Grupo 2-28,text,true,,16516,240,1,1,http://127.0.0.1:8000/reservaciones/,3,0,1
+1794976667838,3,PERF-02 POST /reservaciones/nueva/ (Sin Conflicto),200,OK,PERF-02 Grupo 2-28,text,true,,18364,240,1,1,http://127.0.0.1:8000/reservaciones/,3,0,1
+1794976667854,3,PERF-02 POST /reservaciones/nueva/ (Sin Conflicto),200,OK,PERF-02 Grupo 2-29,text,true,,14668,240,1,1,http://127.0.0.1:8000/reservaciones/,3,0,1
+1794976667858,3,PERF-02 POST /reservaciones/nueva/ (Sin Conflicto),200,OK,PERF-02 Grupo 2-29,text,true,,16516,240,1,1,http://127.0.0.1:8000/reservaciones/,3,0,1
+1794976667863,3,PERF-02 POST /reservaciones/nueva/ (Sin Conflicto),200,OK,PERF-02 Grupo 2-29,text,true,,18364,240,1,1,http://127.0.0.1:8000/reservaciones/,3,0,1
+1794976667878,3,PERF-02 POST /reservaciones/nueva/ (Sin Conflicto),200,OK,PERF-02 Grupo 2-30,text,true,,14668,240,1,1,http://127.0.0.1:8000/reservaciones/,3,0,1
+1794976667882,3,PERF-02 POST /reservaciones/nueva/ (Sin Conflicto),200,OK,PERF-02 Grupo 2-30,text,true,,16516,240,1,1,http://127.0.0.1:8000/reservaciones/,3,0,1
+1794976667887,3,PERF-02 POST /reservaciones/nueva/ (Sin Conflicto),200,OK,PERF-02 Grupo 2-30,text,true,,18364,240,1,1,http://127.0.0.1:8000/reservaciones/,3,0,1
+1794976668017,5,PERF-03 POST Concurrente Misma Sala y Horario,200,OK,PERF-03 SyncTimer Rep1-Hilo2,text,true,,20170,240,1,1,http://127.0.0.1:8000/reservaciones/,5,0,1
+1794976668018,6,PERF-03 POST Concurrente Misma Sala y Horario,200,OK,PERF-03 SyncTimer Rep1-Hilo1,text,true,,17809,240,1,1,http://127.0.0.1:8000/reservaciones/,6,0,1
+1794976668153,5,PERF-03 POST Concurrente Misma Sala y Horario,200,OK,PERF-03 SyncTimer Rep2-Hilo2,text,true,,22009,240,1,1,http://127.0.0.1:8000/reservaciones/,5,0,1
+1794976668153,5,PERF-03 POST Concurrente Misma Sala y Horario,200,OK,PERF-03 SyncTimer Rep2-Hilo1,text,true,,17809,240,1,1,http://127.0.0.1:8000/reservaciones/,5,0,1
+1794976668286,5,PERF-03 POST Concurrente Misma Sala y Horario,200,OK,PERF-03 SyncTimer Rep3-Hilo2,text,true,,23848,240,1,1,http://127.0.0.1:8000/reservaciones/,5,0,1
+1794976668286,6,PERF-03 POST Concurrente Misma Sala y Horario,200,OK,PERF-03 SyncTimer Rep3-Hilo1,text,true,,17809,240,1,1,http://127.0.0.1:8000/reservaciones/,6,0,1
+1794976668421,6,PERF-03 POST Concurrente Misma Sala y Horario,200,OK,PERF-03 SyncTimer Rep4-Hilo2,text,true,,25687,240,1,1,http://127.0.0.1:8000/reservaciones/,6,0,1
+1794976668421,7,PERF-03 POST Concurrente Misma Sala y Horario,200,OK,PERF-03 SyncTimer Rep4-Hilo1,text,true,,17809,240,1,1,http://127.0.0.1:8000/reservaciones/,7,0,1
+1794976668561,6,PERF-03 POST Concurrente Misma Sala y Horario,200,OK,PERF-03 SyncTimer Rep5-Hilo1,text,true,,20170,240,1,1,http://127.0.0.1:8000/reservaciones/,6,0,1
+1794976668561,6,PERF-03 POST Concurrente Misma Sala y Horario,200,OK,PERF-03 SyncTimer Rep5-Hilo2,text,true,,17809,240,1,1,http://127.0.0.1:8000/reservaciones/,6,0,1
+1794976668695,6,PERF-03 POST Concurrente Misma Sala y Horario,200,OK,PERF-03 SyncTimer Rep6-Hilo1,text,true,,22009,240,1,1,http://127.0.0.1:8000/reservaciones/,6,0,1
+1794976668695,7,PERF-03 POST Concurrente Misma Sala y Horario,200,OK,PERF-03 SyncTimer Rep6-Hilo2,text,true,,17809,240,1,1,http://127.0.0.1:8000/reservaciones/,7,0,1
+1794976668830,6,PERF-03 POST Concurrente Misma Sala y Horario,200,OK,PERF-03 SyncTimer Rep7-Hilo1,text,true,,23848,240,1,1,http://127.0.0.1:8000/reservaciones/,6,0,1
+1794976668830,6,PERF-03 POST Concurrente Misma Sala y Horario,200,OK,PERF-03 SyncTimer Rep7-Hilo2,text,true,,17809,240,1,1,http://127.0.0.1:8000/reservaciones/,6,0,1
+1794976668974,6,PERF-03 POST Concurrente Misma Sala y Horario,200,OK,PERF-03 SyncTimer Rep8-Hilo1,text,true,,25687,240,1,1,http://127.0.0.1:8000/reservaciones/,6,0,1
+1794976668974,7,PERF-03 POST Concurrente Misma Sala y Horario,200,OK,PERF-03 SyncTimer Rep8-Hilo2,text,true,,17809,240,1,1,http://127.0.0.1:8000/reservaciones/,7,0,1
+1794976669119,6,PERF-03 POST Concurrente Misma Sala y Horario,200,OK,PERF-03 SyncTimer Rep9-Hilo1,text,true,,27526,240,1,1,http://127.0.0.1:8000/reservaciones/,6,0,1
+1794976669119,6,PERF-03 POST Concurrente Misma Sala y Horario,200,OK,PERF-03 SyncTimer Rep9-Hilo2,text,true,,17809,240,1,1,http://127.0.0.1:8000/reservaciones/,6,0,1
+1794976669254,6,PERF-03 POST Concurrente Misma Sala y Horario,200,OK,PERF-03 SyncTimer Rep10-Hilo1,text,true,,29366,240,1,1,http://127.0.0.1:8000/reservaciones/,6,0,1
+1794976669255,6,PERF-03 POST Concurrente Misma Sala y Horario,200,OK,PERF-03 SyncTimer Rep10-Hilo2,text,true,,17810,240,1,1,http://127.0.0.1:8000/reservaciones/,6,0,1

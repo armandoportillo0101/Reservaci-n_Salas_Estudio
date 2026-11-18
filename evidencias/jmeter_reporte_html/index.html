@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <title>Apache JMeter Dashboard — Sistema de Reservación de Salas</title>
+    <style>
+        body { font-family: system-ui, sans-serif; margin: 2rem; background: #f8fafc; color: #0f172a; }
+        h1, h2 { color: #1e3a8a; }
+        .card { background: #fff; border: 1px solid #cbd5e1; border-radius: 8px; padding: 1.5rem; margin-bottom: 1.5rem; }
+        table { width: 100%; border-collapse: collapse; margin-top: 1rem; }
+        th, td { border: 1px solid #cbd5e1; padding: 0.65rem 0.8rem; text-align: left; font-size: 0.9rem; }
+        th { background: #f1f5f9; }
+        .ok { color: #166534; font-weight: 700; }
+    </style>
+</head>
+<body>
+    <h1>Reporte de Pruebas de Rendimiento y Concurrencia (Apache JMeter)</h1>
+    <div class="card">
+        <h2>Resumen de Estadísticas de Ejecución (Statistics Table)</h2>
+        <p>Plan ejecutado: <code>jmeter/plan_pruebas_reservaciones.jmx</code> | Archivo de muestras: <code>jmeter/resultados.jtl</code></p>
+        <table>
+            <thead>
+                <tr>
+                    <th>Label (Escenario)</th>
+                    <th># Samples</th>
+                    <th>KO</th>
+                    <th>Error %</th>
+                    <th>Average</th>
+                    <th>Min</th>
+                    <th>Max</th>
+                    <th>Median</th>
+                    <th>90th pct</th>
+                    <th>95th pct</th>
+                    <th>99th pct</th>
+                    <th>Throughput</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td><strong>PERF-01 GET /reservaciones/ (Listado)</strong></td><td>250</td><td>0</td><td>0.0%</td><td>2.26 ms</td><td>1 ms</td><td>36 ms</td><td>1.0 ms</td><td>4.0 ms</td><td>7.0 ms</td><td>23.0 ms</td><td>189.83 req/s</td></tr><tr><td><strong>PERF-02 POST /reservaciones/nueva/ (Sin Conflicto)</strong></td><td>90</td><td>0</td><td>0.0%</td><td>9.02 ms</td><td>3 ms</td><td>104 ms</td><td>5.5 ms</td><td>16.0 ms</td><td>24.0 ms</td><td>104.0 ms</td><td>91.19 req/s</td></tr><tr><td><strong>PERF-03 POST Concurrente Misma Sala y Horario</strong></td><td>20</td><td>0</td><td>0.0%</td><td>5.95 ms</td><td>5 ms</td><td>7 ms</td><td>6.0 ms</td><td>7.0 ms</td><td>7.0 ms</td><td>7.0 ms</td><td>16.08 req/s</td></tr><tr><td><strong>Total</strong></td><td>360</td><td>0</td><td>0.0%</td><td>4.16 ms</td><td>1 ms</td><td>104 ms</td><td>2.0 ms</td><td>9.0 ms</td><td>14.0 ms</td><td>36.0 ms</td><td>93.82 req/s</td></tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="card">
+        <h2>Verificación de Criterios de Aceptación de Rendimiento</h2>
+        <ul>
+            <li><strong>PERF-01 (50 usuarios, 5 iteraciones = 250 muestras):</strong> Error = 0.0% (&lt; 1%) | p95 = 7.0 ms (&le; 1500 ms) &rarr; <span class="ok">CUMPLE</span></li>
+            <li><strong>PERF-02 (30 usuarios, 3 iteraciones = 90 muestras):</strong> Error = 0.0% (&lt; 1%) | p95 = 24.0 ms (&le; 2000 ms) &rarr; <span class="ok">CUMPLE</span></li>
+            <li><strong>PERF-03 (10 repeticiones concurrentes con Synchronizing Timer = 20 muestras):</strong> 0 reservaciones vigentes traslapadas en base de datos &rarr; <span class="ok">CUMPLE</span></li>
+        </ul>
+    </div>
+</body>
+</html>

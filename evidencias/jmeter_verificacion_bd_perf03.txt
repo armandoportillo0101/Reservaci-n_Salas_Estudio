@@ -1,0 +1,35 @@
+======================================================================
+EVIDENCIA T68: CONSULTA A LA BASE DE DATOS DESPUÉS DE PERF-03
+======================================================================
+
+1. Consulta SQL de auditoría de traslapes vigentes ejecutada:
+   SELECT r1.id, r2.id, r1.sala_id, r1.fecha, r1.hora_inicio, r1.hora_fin
+   FROM reservaciones_reservacion r1
+   JOIN reservaciones_reservacion r2
+     ON r1.sala_id = r2.sala_id
+    AND r1.fecha = r2.fecha
+    AND r1.id < r2.id
+   WHERE r1.estado = 'VIGENTE'
+     AND r2.estado = 'VIGENTE'
+     AND r1.hora_inicio < r2.hora_fin
+     AND r1.hora_fin > r2.hora_inicio;
+
+   Resultado de pares vigentes traslapados: 0 filas (0 traslapes).
+
+2. Desglose de las 10 repeticiones controladas de PERF-03 (Sala A, 14:00-15:00):
+   Repetición | Fecha      | Solicitudes enviadas | Creadas (VIGENTE) | Rechazadas por traslape | Vigentes en BD
+   -----------+------------+----------------------+-------------------+-------------------------+---------------
+   Rep #01    | 2027-04-01 | 2 simultáneas        | 1                 | 1                       | 1
+   Rep #02    | 2027-04-02 | 2 simultáneas        | 1                 | 1                       | 1
+   Rep #03    | 2027-04-03 | 2 simultáneas        | 1                 | 1                       | 1
+   Rep #04    | 2027-04-04 | 2 simultáneas        | 1                 | 1                       | 1
+   Rep #05    | 2027-04-05 | 2 simultáneas        | 1                 | 1                       | 1
+   Rep #06    | 2027-04-06 | 2 simultáneas        | 1                 | 1                       | 1
+   Rep #07    | 2027-04-07 | 2 simultáneas        | 1                 | 1                       | 1
+   Rep #08    | 2027-04-08 | 2 simultáneas        | 1                 | 1                       | 1
+   Rep #09    | 2027-04-09 | 2 simultáneas        | 1                 | 1                       | 1
+   Rep #10    | 2027-04-10 | 2 simultáneas        | 1                 | 1                       | 1
+
+3. Total de reservaciones VIGENTES en BD tras PERF-01, PERF-02 y PERF-03: 105
+   Conclusión: El bloqueo transaccional (transaction.atomic + select_for_update / BEGIN IMMEDIATE)
+   serializó el 100% de los intentos concurrentes sin permitir ninguna reservación duplicada.
