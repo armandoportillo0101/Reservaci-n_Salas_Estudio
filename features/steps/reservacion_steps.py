@@ -176,7 +176,9 @@ def step_enviar_formulario_reservacion(context):
     btn = context.browser.find_element(By.ID, "id_enviar")
     btn.click()
     WebDriverWait(context.browser, 5).until(
-        EC.presence_of_element_located((By.TAG_NAME, "h1"))
+        EC.presence_of_element_located(
+            (By.CSS_SELECTOR, "#tabla-reservaciones, #errores-formulario")
+        )
     )
 
 
