@@ -1,0 +1,89 @@
+Creating test database for alias 'default'...
+Destroying old test database for alias 'default'...
+EEEEEEE
+======================================================================
+ERROR: test_ext01_limites_de_horario_inicio_y_fin (reservaciones.tests.test_formularios.ReservacionFormTests.test_ext01_limites_de_horario_inicio_y_fin)
+EXT-01: límites 07:59, 08:00, 19:00, 19:01, 20:00 y 20:01.
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/guillermo/Desktop/Escuela/TESTING/ProyectoMauricio/reservaciones/tests/test_formularios.py", line 134, in test_ext01_limites_de_horario_inicio_y_fin
+    form_ini = ReservacionForm(
+        data=self._datos_validos(
+    ...<2 lines>...
+        hoy=self.hoy,
+    )
+TypeError: BaseForm.__init__() got an unexpected keyword argument 'hoy'
+
+======================================================================
+ERROR: test_queryset_sala_solo_incluye_salas_activas (reservaciones.tests.test_formularios.ReservacionFormTests.test_queryset_sala_solo_incluye_salas_activas)
+T18 y V1-01: el campo sala solo lista salas activas.
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/guillermo/Desktop/Escuela/TESTING/ProyectoMauricio/reservaciones/tests/test_formularios.py", line 45, in test_queryset_sala_solo_incluye_salas_activas
+    form = ReservacionForm(hoy=self.hoy)
+TypeError: BaseForm.__init__() got an unexpected keyword argument 'hoy'
+
+======================================================================
+ERROR: test_t19_integrar_errores_de_servicio_en_formulario (reservaciones.tests.test_formularios.ReservacionFormTests.test_t19_integrar_errores_de_servicio_en_formulario)
+T19: asocia errores del servicio al campo correspondiente o general.
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/guillermo/Desktop/Escuela/TESTING/ProyectoMauricio/reservaciones/tests/test_formularios.py", line 170, in test_t19_integrar_errores_de_servicio_en_formulario
+    form_cap = ReservacionForm(data=self._datos_validos(), hoy=self.hoy)
+TypeError: BaseForm.__init__() got an unexpected keyword argument 'hoy'
+
+======================================================================
+ERROR: test_ut02_ext02_proposito_longitud_y_recorte_de_espacios (reservaciones.tests.test_formularios.ReservacionFormTests.test_ut02_ext02_proposito_longitud_y_recorte_de_espacios)
+UT-02 y EXT-02: rechaza 9 y 201 chars o espacios; acepta 10 y 200.
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/guillermo/Desktop/Escuela/TESTING/ProyectoMauricio/reservaciones/tests/test_formularios.py", line 62, in test_ut02_ext02_proposito_longitud_y_recorte_de_espacios
+    form_inv = ReservacionForm(
+        data=self._datos_validos(proposito=invalido),
+        hoy=self.hoy,
+    )
+TypeError: BaseForm.__init__() got an unexpected keyword argument 'hoy'
+
+======================================================================
+ERROR: test_ut03_ext03_rechazar_asistentes_cero_negativo_decimal_texto_vacio (reservaciones.tests.test_formularios.ReservacionFormTests.test_ut03_ext03_rechazar_asistentes_cero_negativo_decimal_texto_vacio)
+UT-03 y EXT-03: rechaza 0, negativo, decimal, texto o vacío.
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/guillermo/Desktop/Escuela/TESTING/ProyectoMauricio/reservaciones/tests/test_formularios.py", line 90, in test_ut03_ext03_rechazar_asistentes_cero_negativo_decimal_texto_vacio
+    form = ReservacionForm(
+        data=self._datos_validos(asistentes=valor),
+        hoy=self.hoy,
+    )
+TypeError: BaseForm.__init__() got an unexpected keyword argument 'hoy'
+
+======================================================================
+ERROR: test_ut05_rechazar_fecha_pasada_y_permitir_fecha_actual (reservaciones.tests.test_formularios.ReservacionFormTests.test_ut05_rechazar_fecha_pasada_y_permitir_fecha_actual)
+UT-05: rechaza fecha anterior a hoy y permite hoy.
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/guillermo/Desktop/Escuela/TESTING/ProyectoMauricio/reservaciones/tests/test_formularios.py", line 103, in test_ut05_rechazar_fecha_pasada_y_permitir_fecha_actual
+    form_ayer = ReservacionForm(
+        data=self._datos_validos(fecha=ayer),
+        hoy=self.hoy,
+    )
+TypeError: BaseForm.__init__() got an unexpected keyword argument 'hoy'
+
+======================================================================
+ERROR: test_ut06_rechazar_hora_fin_menor_o_igual_a_hora_inicio (reservaciones.tests.test_formularios.ReservacionFormTests.test_ut06_rechazar_hora_fin_menor_o_igual_a_hora_inicio)
+UT-06: rechaza hora de fin igual o anterior a hora de inicio.
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/guillermo/Desktop/Escuela/TESTING/ProyectoMauricio/reservaciones/tests/test_formularios.py", line 121, in test_ut06_rechazar_hora_fin_menor_o_igual_a_hora_inicio
+    form = ReservacionForm(
+        data=self._datos_validos(hora_inicio="10:00", hora_fin=fin),
+        hoy=self.hoy,
+    )
+TypeError: BaseForm.__init__() got an unexpected keyword argument 'hoy'
+
+----------------------------------------------------------------------
+Ran 7 tests in 0.003s
+
+FAILED (errors=7)
+Destroying test database for alias 'default'...
+Found 7 test(s).
+System check identified no issues (0 silenced).
