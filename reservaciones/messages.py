@@ -26,6 +26,16 @@ MSG_ASISTENTES_INVALIDOS = (
     "El número de asistentes debe ser un entero mayor o igual a 1."
 )
 
+# Mensajes de dominio para cancelación de reservaciones (HU-02)
+MSG_EXITO_CANCELACION = "Reservación cancelada correctamente."
+MSG_PERIODO_CANCELACION_CONCLUIDO = (
+    "El periodo de cancelación ha concluido."
+)
+MSG_RESERVACION_YA_CANCELADA = "La reservación ya fue cancelada."
+MSG_CANCELACION_NO_AUTORIZADA = (
+    "No tiene permiso para cancelar esta reservación."
+)
+
 # Alias cortos para reutilización en otras capas e historias de usuario
 EXITO = MSG_EXITO_RESERVACION
 TRASLAPE = MSG_TRASLAPE
@@ -38,3 +48,7 @@ INICIO_FUERA_DE_RANGO = MSG_INICIO_FUERA_DE_RANGO
 FIN_FUERA_DE_RANGO = MSG_FIN_FUERA_DE_RANGO
 PROPOSITO = MSG_PROPOSITO_INVALIDO
 ASISTENTES = MSG_ASISTENTES_INVALIDOS
+EXITO_CANCELACION = MSG_EXITO_CANCELACION
+PERIODO_CANCELACION = MSG_PERIODO_CANCELACION_CONCLUIDO
+YA_CANCELADA = MSG_RESERVACION_YA_CANCELADA
+NO_AUTORIZADA = MSG_CANCELACION_NO_AUTORIZADA

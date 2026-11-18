@@ -75,3 +75,21 @@ class TraslapeReservacionError(ErrorDominioReservacion):
     """Se lanza cuando existe otra reservación vigente en el mismo horario."""
 
     mensaje_por_defecto = messages.MSG_TRASLAPE
+
+
+class CancelacionNoAutorizadaError(ErrorDominioReservacion):
+    """Se lanza cuando el usuario no es propietario de la reservación."""
+
+    mensaje_por_defecto = messages.MSG_CANCELACION_NO_AUTORIZADA
+
+
+class PeriodoCancelacionConcluidoError(ErrorDominioReservacion):
+    """Se lanza cuando faltan 60 minutos o menos para el inicio."""
+
+    mensaje_por_defecto = messages.MSG_PERIODO_CANCELACION_CONCLUIDO
+
+
+class ReservacionYaCanceladaError(ErrorDominioReservacion):
+    """Se lanza cuando se intenta cancelar una reservación ya cancelada."""
+
+    mensaje_por_defecto = messages.MSG_RESERVACION_YA_CANCELADA
