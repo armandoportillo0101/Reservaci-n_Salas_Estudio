@@ -1,0 +1,10 @@
+# Lista de Verificación de Revisión Cruzada: Persona 3 → Persona 1 (Tarea T85)
+
+**Estado global de la revisión**: **APROBADO (CUMPLE AL 100%)**
+
+| # | Criterio de verificación | Archivos / Componentes revisados de Persona 1 | Estado | Observaciones |
+| :-: | :--- | :--- | :---: | :--- |
+| 1 | **Control transaccional y protección contra condiciones de carrera (`RN-08`, `T16`)** | `reservaciones/services/reservaciones.py`, `config/settings.py` y `reservaciones/tests/test_integracion.py`. | ✅ CUMPLE | `crear_reservacion` encapsula `select_for_update()`, validación de sala activa, capacidad, `verificar_disponibilidad` y `Reservacion.objects.create` dentro de `with transaction.atomic():`, junto con `transaction_mode: "IMMEDIATE"` en SQLite. |
+| 2 | **Centralización de validadores y reglas de negocio (`RT-03`, `T13`–`T15`)** | `reservaciones/validators.py`, `reservaciones/services/disponibilidad.py`, `reservaciones/exceptions.py` y `reservaciones/messages.py`. | ✅ CUMPLE | Todas las constantes y validaciones de horario (`08:00`–`20:00`), duración (`30`–`120` min), capacidad y traslape (`inicio_nuevo < fin_existente` y `fin_nuevo > inicio_existente` solo para `VIGENTE`) están centralizadas sin duplicación. |
+| 3 | **Cumplimiento de cobertura 100%, PEP 8 y complejidad ciclomática ≤ 10 (`RT-07` a `RT-09`)** | `.coveragerc`, `.flake8`, `radon.cfg`, `evidencias/cobertura.txt`, `evidencias/flake8.txt` y `evidencias/radon.txt`. | ✅ CUMPLE | Cobertura del **100%** en sentencias y ramas (`950` sentencias, `86` ramas), `flake8` con **0 hallazgos** y complejidad ciclomática máxima de **6** (promedio **A 1.75**). |
+| 4 | **Pruebas unitarias e integración de HU-01 (`UT-01`, `UT-04`, `UT-07`–`UT-12`, `IT-01`)** | `test_modelos.py`, `test_validadores.py`, `test_servicios.py`, `test_integracion.py` y `test_vistas.py`. | ✅ CUMPLE | Cubre todos los casos obligatorios y valores límite recomendados (`29`, `30`, `120`, `121` min; traslape parcial, contenido, envolvente y exacto; horarios adyacentes y concurrencia con hilos). |

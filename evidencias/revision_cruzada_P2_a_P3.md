@@ -1,0 +1,11 @@
+# Lista de Verificación de Revisión Cruzada: Persona 2 → Persona 3 (Tarea T84)
+
+**Estado global de la revisión**: **APROBADO (CUMPLE AL 100%)**
+
+| # | Criterio de verificación | Archivos / Componentes revisados de Persona 3 | Estado | Observaciones |
+| :-: | :--- | :--- | :---: | :--- |
+| 1 | **Cobertura completa de escenarios BDD de HU-01 (`CA-01` a `CA-06`)** | `features/reservaciones.feature` y `features/steps/reservacion_steps.py`. | ✅ CUMPLE | Incluye `CA-01` (válida), `CA-02` (traslape `10:00-11:00` vs `10:30-11:30`), `CA-03` (5 asistentes en sala de 4), `CA-04` (`Esquema del escenario` para fecha pasada y hora fin $\le$ inicio), `CA-05` (sala inactiva) y `CA-06` (concurrencia con 2 sesiones de navegador). |
+| 2 | **Ejecución real desde la interfaz web (`BDD-6`, `T61`)** | `features/steps/autenticacion_steps.py`, `features/steps/reservacion_steps.py` y `features/steps/cancelacion_steps.py`. | ✅ CUMPLE | Ningún escenario sustituye la acción evaluada por llamadas directas a vistas o BD; todas las acciones se ejecutan en Selenium Headless interactuando con el DOM (`#id_sala`..`#id_enviar`, `#btn-confirmar-cancelacion`). |
+| 3 | **Limpieza y datos deterministas entre escenarios (`BDD-3`, `T45`)** | `features/environment.py` y `cargar_usuarios_prueba.py` (`T12`). | ✅ CUMPLE | `before_scenario` limpia `Reservacion` y `Sala`, ejecuta `cargar_salas` y `cargar_usuarios_prueba` de forma idempotente, y `after_scenario` limpia las cookies de sesión. |
+| 4 | **Plan de pruebas JMeter y parametrización CSV (`PERF-01`, `PERF-02`, `PERF-03`)** | `jmeter/plan_pruebas_reservaciones.jmx` y `jmeter/datos_perf02.csv`. | ✅ CUMPLE | `PERF-01` configura 50 usuarios, 30 s ramp-up y 5 iteraciones (`p95 = 7.0 ms <= 1500 ms`); `PERF-02` usa 30 usuarios, 30 s ramp-up y 3 iteraciones con CSV sin traslape (`p95 = 24.0 ms <= 2000 ms`); `PERF-03` utiliza `Synchronizing Timer` con 10 repeticiones controladas. |
+| 5 | **Evidencia de no-traslape en Base de Datos e interpretación (`T68`, `T70`, `T71`)** | `evidencias/jmeter_verificacion_bd_perf03.txt`, `evidencias/jmeter_reporte_html/index.html` y `evidencias/jmeter_resumen_e_interpretacion.md`. | ✅ CUMPLE | La consulta SQL post-`PERF-03` demuestra 0 reservaciones vigentes traslapadas y el reporte incluye p90, p95, throughput, % de error e interpretación técnica. |
