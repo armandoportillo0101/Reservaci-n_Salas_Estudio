@@ -1,60 +1,153 @@
-<!-- # TEMPORAL: reemplazar por Persona 2 -->
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="utf-8">
-    <title>Nueva Reservación</title>
-</head>
-<body>
-    <h1>Registrar Reservación de Sala</h1>
+{% extends "base.html" %}
 
-    {% if messages %}
-    <ul class="messages">
-        {% for message in messages %}
-        <li>{{ message }}</li>
-        {% endfor %}
-    </ul>
-    {% endif %}
+{% block title %}Nueva Reservación{% endblock %}
 
-    {% if form.non_field_errors %}
-    <div class="errors">
-        {{ form.non_field_errors }}
+{% block content %}
+<style>
+    .grid-reserva {
+        display: grid;
+        grid-template-columns: 1.6fr 1fr;
+        gap: 1.5rem;
+        align-items: start;
+    }
+    .grid-dos-columnas {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem;
+    }
+    .sala-item {
+        padding: 0.75rem 0.9rem;
+        border: 1px solid var(--color-border);
+        border-radius: 8px;
+        margin-bottom: 0.65rem;
+        background: #f8fafc;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .reglas-lista {
+        margin: 0.5rem 0 0 1.1rem;
+        padding: 0;
+        color: #334155;
+        font-size: 0.88rem;
+    }
+    .reglas-lista li { margin-bottom: 0.35rem; }
+    @media (max-width: 768px) {
+        .grid-reserva, .grid-dos-columnas {
+            grid-template-columns: 1fr;
+        }
+    }
+</style>
+
+<div class="grid-reserva">
+    <div class="card">
+        <div class="page-header">
+            <div>
+                <h1 id="titulo-nueva-reservacion">Registrar Reservación de Sala</h1>
+                <p class="page-subtitle">Completa los datos para apartar una sala de estudio disponible.</p>
+            </div>
+        </div>
+
+        {% if form.non_field_errors %}
+            <div id="errores-formulario" class="errors" role="alert">
+                {{ form.non_field_errors }}
+            </div>
+        {% endif %}
+
+        <form id="form-nueva-reservacion" method="post" action="{% url 'reservaciones:nueva' %}" novalidate>
+            {% csrf_token %}
+            <div class="form-group">
+                <label for="id_sala">Sala:</label>
+                {{ form.sala }}
+                {% if form.sala.errors %}
+                    <div id="error-sala" class="field-error">{{ form.sala.errors }}</div>
+                {% endif %}
+            </div>
+
+            <div class="grid-dos-columnas">
+                <div class="form-group">
+                    <label for="id_fecha">Fecha:</label>
+                    {{ form.fecha }}
+                    <div class="field-hint">Hoy o una fecha futura.</div>
+                    {% if form.fecha.errors %}
+                        <div id="error-fecha" class="field-error">{{ form.fecha.errors }}</div>
+                    {% endif %}
+                </div>
+
+                <div class="form-group">
+                    <label for="id_asistentes">Asistentes:</label>
+                    {{ form.asistentes }}
+                    <div class="field-hint">Mínimo 1 y sin exceder la capacidad de la sala.</div>
+                    {% if form.asistentes.errors %}
+                        <div id="error-asistentes" class="field-error">{{ form.asistentes.errors }}</div>
+                    {% endif %}
+                </div>
+            </div>
+
+            <div class="grid-dos-columnas">
+                <div class="form-group">
+                    <label for="id_hora_inicio">Hora de inicio:</label>
+                    {{ form.hora_inicio }}
+                    <div class="field-hint">Entre 08:00 y 19:00 h.</div>
+                    {% if form.hora_inicio.errors %}
+                        <div id="error-hora_inicio" class="field-error">{{ form.hora_inicio.errors }}</div>
+                    {% endif %}
+                </div>
+
+                <div class="form-group">
+                    <label for="id_hora_fin">Hora de fin:</label>
+                    {{ form.hora_fin }}
+                    <div class="field-hint">Posterior al inicio y máximo 20:00 h.</div>
+                    {% if form.hora_fin.errors %}
+                        <div id="error-hora_fin" class="field-error">{{ form.hora_fin.errors }}</div>
+                    {% endif %}
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="id_proposito">Propósito:</label>
+                {{ form.proposito }}
+                <div class="field-hint">Describe brevemente el objetivo de la sesión (entre 10 y 200 caracteres).</div>
+                {% if form.proposito.errors %}
+                    <div id="error-proposito" class="field-error">{{ form.proposito.errors }}</div>
+                {% endif %}
+            </div>
+
+            <div style="display: flex; gap: 0.75rem; margin-top: 1.5rem;">
+                <button type="submit" id="id_enviar" class="btn btn-primary">
+                    Reservar sala
+                </button>
+                <a id="id_cancelar_formulario" href="{% url 'reservaciones:lista' %}" class="btn btn-secondary">
+                    Volver al listado
+                </a>
+            </div>
+        </form>
     </div>
-    {% endif %}
 
-    <form method="post" action="{% url 'reservaciones:nueva' %}" novalidate>
-        {% csrf_token %}
-        <div>
-            <label for="id_sala">Sala:</label>
-            {{ form.sala }}
-            {{ form.sala.errors }}
+    <aside class="card">
+        <h2 style="margin: 0 0 0.75rem 0; font-size: 1.1rem;">Salas Activas</h2>
+        {% if salas_activas %}
+            {% for s in salas_activas %}
+                <div class="sala-item">
+                    <div>
+                        <strong style="display: block; font-size: 0.95rem;">{{ s.nombre }}</strong>
+                        <span style="font-size: 0.82rem; color: var(--color-muted);">{{ s.ubicacion }}</span>
+                    </div>
+                    <span class="badge badge-vigente">Máx. {{ s.capacidad }} pers.</span>
+                </div>
+            {% endfor %}
+        {% else %}
+            <p style="font-size: 0.88rem; color: var(--color-muted);">No hay salas activas registradas.</p>
+        {% endif %}
+
+        <div style="margin-top: 1.25rem; padding-top: 1rem; border-top: 1px solid var(--color-border);">
+            <h3 style="margin: 0 0 0.4rem 0; font-size: 0.95rem;">Reglas Institucionales</h3>
+            <ul class="reglas-lista">
+                <li>Horario permitido: <strong>08:00 a 20:00 h</strong> (inicio hasta las 19:00 h).</li>
+                <li>Duración por sesión: mínimo <strong>30 minutos</strong> y máximo <strong>2 horas</strong>.</li>
+                <li>Cancelaciones permitidas con <strong>más de 60 minutos</strong> de anticipación.</li>
+            </ul>
         </div>
-        <div>
-            <label for="id_fecha">Fecha:</label>
-            {{ form.fecha }}
-            {{ form.fecha.errors }}
-        </div>
-        <div>
-            <label for="id_hora_inicio">Hora de inicio:</label>
-            {{ form.hora_inicio }}
-            {{ form.hora_inicio.errors }}
-        </div>
-        <div>
-            <label for="id_hora_fin">Hora de fin:</label>
-            {{ form.hora_fin }}
-            {{ form.hora_fin.errors }}
-        </div>
-        <div>
-            <label for="id_asistentes">Asistentes:</label>
-            {{ form.asistentes }}
-            {{ form.asistentes.errors }}
-        </div>
-        <div>
-            <label for="id_proposito">Propósito:</label>
-            {{ form.proposito }}
-            {{ form.proposito.errors }}
-        </div>
-        <button type="submit" id="id_enviar">Reservar</button>
-    </form>
-</body>
-</html>
+    </aside>
+</div>
+{% endblock %}

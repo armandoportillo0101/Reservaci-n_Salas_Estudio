@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+
+{% block title %}Iniciar Sesión — Reservación de Salas{% endblock %}
+
+{% block content %}
+<div style="max-width: 440px; margin: 1.5rem auto;">
+    <div class="card">
+        <div style="text-align: center; margin-bottom: 1.5rem;">
+            <h1 id="titulo-login" style="margin: 0 0 0.35rem 0; font-size: 1.5rem;">Iniciar Sesión</h1>
+            <p class="page-subtitle">Ingresa con tu cuenta universitaria para gestionar tus salas de estudio.</p>
+        </div>
+
+        {% if form.errors %}
+            <div id="error-login" class="alert alerta-error" role="alert">
+                Usuario o contraseña incorrectos. Intente nuevamente.
+            </div>
+        {% endif %}
+
+        <form id="form-login" method="post" action="{% url 'login' %}">
+            {% csrf_token %}
+            {% if next %}
+                <input type="hidden" name="next" value="{{ next }}">
+            {% endif %}
+            <div class="form-group">
+                <label for="id_username">Usuario:</label>
+                <input type="text" name="username" id="id_username" placeholder="Ej. propietario" required autofocus>
+            </div>
+            <div class="form-group">
+                <label for="id_password">Contraseña:</label>
+                <input type="password" name="password" id="id_password" placeholder="••••••••" required>
+            </div>
+            <button id="btn-login" type="submit" class="btn btn-primary" style="width: 100%; margin-top: 0.5rem;">
+                Ingresar al sistema
+            </button>
+        </form>
+
+        <div style="margin-top: 1.5rem; padding-top: 1rem; border-top: 1px solid var(--color-border); font-size: 0.83rem; color: var(--color-muted);">
+            <strong>Cuentas de prueba disponibles:</strong>
+            <ul style="margin: 0.4rem 0 0 1.1rem; padding: 0;">
+                <li><code>propietario</code> / <code>TestPass123!</code></li>
+                <li><code>otro_usuario</code> / <code>TestPass123!</code></li>
+            </ul>
+        </div>
+    </div>
+</div>
+{% endblock %}
