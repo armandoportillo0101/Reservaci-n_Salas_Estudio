@@ -1,0 +1,30 @@
+Creating test database for alias 'default'...
+Destroying old test database for alias 'default'...
+E
+======================================================================
+ERROR: test_crea_usuarios_bdd_y_lote_jmeter_de_forma_idempotente (reservaciones.tests.test_modelos.CargarUsuariosPruebaCommandTests.test_crea_usuarios_bdd_y_lote_jmeter_de_forma_idempotente)
+Verifica creación de propietario, otro_usuario y 50 para JMeter.
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/guillermo/Desktop/Escuela/TESTING/ProyectoMauricio/.venv/lib/python3.14/site-packages/django/core/management/__init__.py", line 110, in call_command
+    app_name = get_commands()[command_name]
+               ~~~~~~~~~~~~~~^^^^^^^^^^^^^^
+KeyError: 'cargar_usuarios_prueba'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/guillermo/Desktop/Escuela/TESTING/ProyectoMauricio/reservaciones/tests/test_modelos.py", line 154, in test_crea_usuarios_bdd_y_lote_jmeter_de_forma_idempotente
+    call_command("cargar_usuarios_prueba", stdout=salida)
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/guillermo/Desktop/Escuela/TESTING/ProyectoMauricio/.venv/lib/python3.14/site-packages/django/core/management/__init__.py", line 112, in call_command
+    raise CommandError("Unknown command: %r" % command_name)
+django.core.management.base.CommandError: Unknown command: 'cargar_usuarios_prueba'
+
+----------------------------------------------------------------------
+Ran 1 test in 0.001s
+
+FAILED (errors=1)
+Destroying test database for alias 'default'...
+Found 1 test(s).
+System check identified no issues (0 silenced).

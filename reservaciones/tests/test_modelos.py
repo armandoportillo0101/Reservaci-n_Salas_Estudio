@@ -142,3 +142,23 @@ class CargarSalasCommandTests(TestCase):
             self.assertEqual(sala.ubicacion, ubicacion)
             self.assertEqual(sala.capacidad, capacidad)
             self.assertEqual(sala.activa, activa)
+
+
+class CargarUsuariosPruebaCommandTests(TestCase):
+    """Pruebas del comando idempotente cargar_usuarios_prueba (T12)."""
+
+    def test_crea_usuarios_bdd_y_lote_jmeter_de_forma_idempotente(self):
+        """Verifica creación de propietario, otro_usuario y 50 para JMeter."""
+        salida = StringIO()
+        call_command("cargar_usuarios_prueba", stdout=salida)
+        call_command("cargar_usuarios_prueba", stdout=salida)
+
+        for username in ("propietario", "otro_usuario", "usuario_perf_01"):
+            usuario = User.objects.get(username=username)
+            self.assertTrue(usuario.check_password("TestPass123!"))
+
+        perf_count = User.objects.filter(
+            username__startswith="usuario_perf_"
+        ).count()
+        self.assertEqual(perf_count, 50)
+        self.assertIn("Usuarios de prueba cargados", salida.getvalue())
