@@ -1,0 +1,21 @@
+E
+======================================================================
+ERROR: test_cancelaciones (unittest.loader._FailedTest.test_cancelaciones)
+----------------------------------------------------------------------
+ImportError: Failed to import test module: test_cancelaciones
+Traceback (most recent call last):
+  File "/opt/homebrew/Cellar/python@3.14/3.14.7/Frameworks/Python.framework/Versions/3.14/lib/python3.14/unittest/loader.py", line 141, in loadTestsFromName
+    module = __import__(module_name)
+  File "/Users/guillermo/Desktop/Escuela/TESTING/ProyectoMauricio/reservaciones/tests/test_cancelaciones.py", line 10, in <module>
+    from reservaciones.services.cancelaciones import (
+    ...<2 lines>...
+    )
+ModuleNotFoundError: No module named 'reservaciones.services.cancelaciones'
+
+
+----------------------------------------------------------------------
+Ran 1 test in 0.000s
+
+FAILED (errors=1)
+Found 1 test(s).
+System check identified no issues (0 silenced).
