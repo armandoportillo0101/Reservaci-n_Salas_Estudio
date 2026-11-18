@@ -1,0 +1,64 @@
+Creating test database for alias 'default'...
+Destroying old test database for alias 'default'...
+.......FFFFF
+======================================================================
+FAIL: test_t23_errores_de_negocio_en_vista_cancelacion (reservaciones.tests.test_cancelaciones.VistasCancelacionYListaTests.test_t23_errores_de_negocio_en_vista_cancelacion)
+CA-09 y CA-10: muestra mensaje cuando ya fue cancelada o <=60m.
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/guillermo/Desktop/Escuela/TESTING/ProyectoMauricio/reservaciones/tests/test_cancelaciones.py", line 324, in test_t23_errores_de_negocio_en_vista_cancelacion
+    self.assertContains(
+    ~~~~~~~~~~~~~~~~~~~^
+        resp_repetida, messages.MSG_RESERVACION_YA_CANCELADA
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+AssertionError: 404 != 200 : Couldn't retrieve content: Response code was 404 (expected 200)
+
+======================================================================
+FAIL: test_t24_confirmacion_previa_y_cancelacion_post_exitosa (reservaciones.tests.test_cancelaciones.VistasCancelacionYListaTests.test_t24_confirmacion_previa_y_cancelacion_post_exitosa)
+T24: pantalla previa de confirmación y POST cambia a CANCELADA.
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/guillermo/Desktop/Escuela/TESTING/ProyectoMauricio/reservaciones/tests/test_cancelaciones.py", line 304, in test_t24_confirmacion_previa_y_cancelacion_post_exitosa
+    self.assertEqual(resp_conf.status_code, 200)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 404 != 200
+
+======================================================================
+FAIL: test_t25_ext11_listado_solo_propias_y_visibilidad_boton_cancelar (reservaciones.tests.test_cancelaciones.VistasCancelacionYListaTests.test_t25_ext11_listado_solo_propias_y_visibilidad_boton_cancelar)
+T25 y EXT-11: solo muestra propias y oculta botón si no aplica.
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/guillermo/Desktop/Escuela/TESTING/ProyectoMauricio/reservaciones/tests/test_cancelaciones.py", line 368, in test_t25_ext11_listado_solo_propias_y_visibilidad_boton_cancelar
+    self.assertIn("Estudio de arquitectura de software", html)
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 'Estudio de arquitectura de software' not found in '<!-- # TEMPORAL: reemplazar por Persona 2 -->\n<!DOCTYPE html>\n<html lang="es">\n<head>\n    <meta charset="utf-8">\n    <title>Mis Reservaciones</title>\n</head>\n<body>\n    <h1>Mis Reservaciones</h1>\n    \n</body>\n</html>\n\n'
+
+======================================================================
+FAIL: test_ut18_impedir_cancelacion_anonima_y_metodo_get (reservaciones.tests.test_cancelaciones.VistasCancelacionYListaTests.test_ut18_impedir_cancelacion_anonima_y_metodo_get)
+UT-18 y RT-12: acceso anónimo redirige al login y GET da 405.
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/guillermo/Desktop/Escuela/TESTING/ProyectoMauricio/reservaciones/tests/test_cancelaciones.py", line 256, in test_ut18_impedir_cancelacion_anonima_y_metodo_get
+    self.assertEqual(resp_anon.status_code, 302)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 404 != 302
+
+======================================================================
+FAIL: test_ut19_ext10_impedir_peticion_manipulada_sobre_registro_ajeno (reservaciones.tests.test_cancelaciones.VistasCancelacionYListaTests.test_ut19_ext10_impedir_peticion_manipulada_sobre_registro_ajeno)
+UT-19 y EXT-10: rechaza ID ajeno con 403 sin filtrar datos y 404.
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/guillermo/Desktop/Escuela/TESTING/ProyectoMauricio/reservaciones/tests/test_cancelaciones.py", line 274, in test_ut19_ext10_impedir_peticion_manipulada_sobre_registro_ajeno
+    self.assertEqual(resp_post.status_code, 403)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 404 != 403
+
+----------------------------------------------------------------------
+Ran 12 tests in 2.611s
+
+FAILED (failures=5)
+Destroying test database for alias 'default'...
+Found 12 test(s).
+System check identified no issues (0 silenced).

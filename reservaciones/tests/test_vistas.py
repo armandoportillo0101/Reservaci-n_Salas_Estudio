@@ -128,3 +128,9 @@ class NuevaReservacionViewTests(TestCase):
         self.assertContains(
             respuesta, "Propósito conservado ante fecha malformada"
         )
+
+    def test_raiz_redirige_a_listado_de_reservaciones(self):
+        """Verifica que la ruta raíz / redirija a /reservaciones/."""
+        respuesta = self.client.get("/")
+        self.assertEqual(respuesta.status_code, 302)
+        self.assertEqual(respuesta["Location"], self.url_lista)
