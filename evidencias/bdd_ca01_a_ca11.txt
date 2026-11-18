@@ -1,0 +1,180 @@
+USING RUNNER: behave.runner:Runner
+Característica: Cancelación de reservaciones de salas de estudio (HU-02) # features/cancelaciones.feature:2
+  Como usuario autenticado propietario de una reservación
+  Quiero cancelar una reservación que ya no utilizaré
+  Para liberar la sala y permitir que otro usuario pueda reservarla
+  Escenario: CA-07 Cancelar una reservación vigente con anticipación suficiente                  # features/cancelaciones.feature:7
+    Dado que el usuario "propietario" ha iniciado sesión                                         # features/steps/autenticacion_steps.py:15
+Not Found: /favicon.ico
+    Dado que el usuario "propietario" ha iniciado sesión                                         # features/steps/autenticacion_steps.py:15 0.560s
+    Y es propietario de una reservación vigente cuyo inicio ocurrirá dentro de más de 60 minutos # features/steps/cancelacion_steps.py:22
+    Y es propietario de una reservación vigente cuyo inicio ocurrirá dentro de más de 60 minutos # features/steps/cancelacion_steps.py:22 0.002s
+    Cuando confirma la cancelación desde la interfaz                                             # features/steps/cancelacion_steps.py:113
+    Cuando confirma la cancelación desde la interfaz                                             # features/steps/cancelacion_steps.py:113 0.164s
+    Entonces el sistema cambia el estado de la reservación a "CANCELADA"                         # features/steps/cancelacion_steps.py:173
+    Entonces el sistema cambia el estado de la reservación a "CANCELADA"                         # features/steps/cancelacion_steps.py:173 0.010s
+    Y registra la fecha y hora de cancelación                                                    # features/steps/cancelacion_steps.py:185
+    Y registra la fecha y hora de cancelación                                                    # features/steps/cancelacion_steps.py:185 0.000s
+    Y muestra un mensaje de confirmación de cancelación                                          # features/steps/cancelacion_steps.py:192
+    Y muestra un mensaje de confirmación de cancelación                                          # features/steps/cancelacion_steps.py:192 0.008s
+    Y la sala vuelve a estar disponible para ese horario                                         # features/steps/cancelacion_steps.py:199
+    Y la sala vuelve a estar disponible para ese horario                                         # features/steps/cancelacion_steps.py:199 0.002s
+
+  Escenario: CA-08 Impedir que un usuario cancele una reservación ajena    # features/cancelaciones.feature:16
+    Dado que existe una reservación vigente perteneciente a "otro_usuario" # features/steps/cancelacion_steps.py:41
+    Dado que existe una reservación vigente perteneciente a "otro_usuario" # features/steps/cancelacion_steps.py:41 0.002s
+    Y el usuario "propietario" ha iniciado sesión                          # features/steps/autenticacion_steps.py:15
+    Y el usuario "propietario" ha iniciado sesión                          # features/steps/autenticacion_steps.py:15 0.310s
+    Cuando intenta cancelar la reservación ajena desde la interfaz         # features/steps/cancelacion_steps.py:153
+Forbidden: /reservaciones/13/confirmar-cancelacion/
+    Cuando intenta cancelar la reservación ajena desde la interfaz         # features/steps/cancelacion_steps.py:153 0.022s
+    Entonces el sistema rechaza la operación de cancelación ajena          # features/steps/cancelacion_steps.py:206
+    Entonces el sistema rechaza la operación de cancelación ajena          # features/steps/cancelacion_steps.py:206 0.010s
+    Y mantiene la reservación en estado "VIGENTE"                          # features/steps/cancelacion_steps.py:213
+    Y mantiene la reservación en estado "VIGENTE"                          # features/steps/cancelacion_steps.py:213 0.000s
+    Y responde sin revelar información sensible de la reservación          # features/steps/cancelacion_steps.py:221
+    Y responde sin revelar información sensible de la reservación          # features/steps/cancelacion_steps.py:221 0.001s
+
+  Escenario: CA-09 Impedir cancelación fuera del periodo permitido                              # features/cancelaciones.feature:24
+    Dado que el usuario "propietario" ha iniciado sesión                                        # features/steps/autenticacion_steps.py:15
+    Dado que el usuario "propietario" ha iniciado sesión                                        # features/steps/autenticacion_steps.py:15 0.600s
+    Y es propietario de una reservación vigente cuando faltan 60 minutos o menos para su inicio # features/steps/cancelacion_steps.py:58
+    Y es propietario de una reservación vigente cuando faltan 60 minutos o menos para su inicio # features/steps/cancelacion_steps.py:58 0.004s
+    Cuando intenta cancelar su reservación desde la interfaz                                    # features/steps/cancelacion_steps.py:134
+    Cuando intenta cancelar su reservación desde la interfaz                                    # features/steps/cancelacion_steps.py:134 0.178s
+    Entonces el sistema mantiene la reservación en estado "VIGENTE"                             # features/steps/cancelacion_steps.py:213
+    Entonces el sistema mantiene la reservación en estado "VIGENTE"                             # features/steps/cancelacion_steps.py:213 0.001s
+    Y muestra un mensaje indicando que el periodo de cancelación ha concluido                   # features/steps/cancelacion_steps.py:228
+    Y muestra un mensaje indicando que el periodo de cancelación ha concluido                   # features/steps/cancelacion_steps.py:228 0.005s
+
+  Escenario: CA-10 Impedir cancelar nuevamente una reservación cancelada             # features/cancelaciones.feature:31
+    Dado que el usuario "propietario" ha iniciado sesión                             # features/steps/autenticacion_steps.py:15
+    Dado que el usuario "propietario" ha iniciado sesión                             # features/steps/autenticacion_steps.py:15 0.228s
+    Y es propietario de una reservación que ya se encuentra en estado "CANCELADA"    # features/steps/cancelacion_steps.py:92
+    Y es propietario de una reservación que ya se encuentra en estado "CANCELADA"    # features/steps/cancelacion_steps.py:92 0.001s
+    Cuando intenta cancelar nuevamente la reservación desde la interfaz              # features/steps/cancelacion_steps.py:134
+    Cuando intenta cancelar nuevamente la reservación desde la interfaz              # features/steps/cancelacion_steps.py:134 0.102s
+    Entonces el sistema conserva el estado "CANCELADA" sin alterar la fecha original # features/steps/cancelacion_steps.py:237
+    Entonces el sistema conserva el estado "CANCELADA" sin alterar la fecha original # features/steps/cancelacion_steps.py:237 0.001s
+    Y muestra un mensaje indicando que la reservación ya fue cancelada               # features/steps/cancelacion_steps.py:250
+    Y muestra un mensaje indicando que la reservación ya fue cancelada               # features/steps/cancelacion_steps.py:250 0.007s
+
+  Escenario: CA-11 Mantener la trazabilidad de la cancelación en el historial                    # features/cancelaciones.feature:38
+    Dado que el usuario "propietario" ha iniciado sesión                                         # features/steps/autenticacion_steps.py:15
+    Dado que el usuario "propietario" ha iniciado sesión                                         # features/steps/autenticacion_steps.py:15 0.258s
+    Y es propietario de una reservación vigente cuyo inicio ocurrirá dentro de más de 60 minutos # features/steps/cancelacion_steps.py:22
+    Y es propietario de una reservación vigente cuyo inicio ocurrirá dentro de más de 60 minutos # features/steps/cancelacion_steps.py:22 0.001s
+    Cuando confirma la cancelación desde la interfaz                                             # features/steps/cancelacion_steps.py:113
+    Cuando confirma la cancelación desde la interfaz                                             # features/steps/cancelacion_steps.py:113 0.120s
+    Y consulta su historial de reservaciones                                                     # features/steps/cancelacion_steps.py:163
+    Y consulta su historial de reservaciones                                                     # features/steps/cancelacion_steps.py:163 0.019s
+    Entonces observa la reservación con estado "CANCELADA" en la tabla                           # features/steps/cancelacion_steps.py:257
+    Entonces observa la reservación con estado "CANCELADA" en la tabla                           # features/steps/cancelacion_steps.py:257 0.009s
+    Y puede identificar la fecha y hora en la que se realizó la cancelación                      # features/steps/cancelacion_steps.py:267
+    Y puede identificar la fecha y hora en la que se realizó la cancelación                      # features/steps/cancelacion_steps.py:267 0.102s
+
+Característica: Registro de reservaciones de salas de estudio (HU-01) # features/reservaciones.feature:2
+  Como usuario autenticado
+  Quiero seleccionar una sala disponible y registrar una reservación
+  Para asegurar el uso exclusivo de la sala durante un periodo determinado
+  Escenario: CA-01 Registrar una reservación válida                                    # features/reservaciones.feature:7
+    Dado que existe una sala activa con capacidad suficiente                           # features/steps/reservacion_steps.py:75
+    Dado que existe una sala activa con capacidad suficiente                           # features/steps/reservacion_steps.py:75 0.000s
+    Y el usuario "propietario" ha iniciado sesión                                      # features/steps/autenticacion_steps.py:15
+    Y el usuario "propietario" ha iniciado sesión                                      # features/steps/autenticacion_steps.py:15 0.267s
+    Y no existe otra reservación vigente que se traslape con el horario solicitado     # features/steps/reservacion_steps.py:82
+    Y no existe otra reservación vigente que se traslape con el horario solicitado     # features/steps/reservacion_steps.py:82 0.000s
+    Cuando captura una fecha válida, hora de inicio "10:00" y hora de fin "11:00"      # features/steps/reservacion_steps.py:144
+    Cuando captura una fecha válida, hora de inicio "10:00" y hora de fin "11:00"      # features/steps/reservacion_steps.py:144 0.001s
+    Y captura 3 asistentes y el propósito "Sesión de estudio grupal para examen final" # features/steps/reservacion_steps.py:157
+    Y captura 3 asistentes y el propósito "Sesión de estudio grupal para examen final" # features/steps/reservacion_steps.py:157 0.119s
+    Y envía el formulario de reservación                                               # features/steps/reservacion_steps.py:173
+    Y envía el formulario de reservación                                               # features/steps/reservacion_steps.py:173 0.056s
+    Entonces el sistema registra la reservación con estado "VIGENTE"                   # features/steps/reservacion_steps.py:354
+    Entonces el sistema registra la reservación con estado "VIGENTE"                   # features/steps/reservacion_steps.py:354 0.001s
+    Y muestra un mensaje de confirmación de registro                                   # features/steps/reservacion_steps.py:362
+    Y muestra un mensaje de confirmación de registro                                   # features/steps/reservacion_steps.py:362 0.008s
+    Y la reservación aparece en la lista de reservaciones del usuario                  # features/steps/reservacion_steps.py:369
+    Y la reservación aparece en la lista de reservaciones del usuario                  # features/steps/reservacion_steps.py:369 0.012s
+
+  Escenario: CA-02 Rechazar una reservación con horario traslapado                          # features/reservaciones.feature:18
+    Dado que existe una reservación vigente para "Sala A" entre las "10:00" y las "11:00"   # features/steps/reservacion_steps.py:91
+    Dado que existe una reservación vigente para "Sala A" entre las "10:00" y las "11:00"   # features/steps/reservacion_steps.py:91 0.001s
+    Y el usuario "propietario" ha iniciado sesión                                           # features/steps/autenticacion_steps.py:15
+    Y el usuario "propietario" ha iniciado sesión                                           # features/steps/autenticacion_steps.py:15 0.239s
+    Cuando intenta registrar otra reservación para "Sala A" entre las "10:30" y las "11:30" # features/steps/reservacion_steps.py:183
+    Cuando intenta registrar otra reservación para "Sala A" entre las "10:30" y las "11:30" # features/steps/reservacion_steps.py:183 0.173s
+    Entonces el sistema no registra la nueva reservación                                    # features/steps/reservacion_steps.py:377
+    Entonces el sistema no registra la nueva reservación                                    # features/steps/reservacion_steps.py:377 0.000s
+    Y muestra un mensaje indicando que la sala no está disponible en el horario solicitado  # features/steps/reservacion_steps.py:389
+    Y muestra un mensaje indicando que la sala no está disponible en el horario solicitado  # features/steps/reservacion_steps.py:389 0.011s
+
+  Escenario: CA-03 Rechazar una reservación que exceda la capacidad                           # features/reservaciones.feature:25
+    Dado que la sala activa "Sala A" tiene capacidad para 4 personas                          # features/steps/reservacion_steps.py:116
+    Dado que la sala activa "Sala A" tiene capacidad para 4 personas                          # features/steps/reservacion_steps.py:116 0.000s
+    Y el usuario "propietario" ha iniciado sesión                                             # features/steps/autenticacion_steps.py:15
+    Y el usuario "propietario" ha iniciado sesión                                             # features/steps/autenticacion_steps.py:15 0.223s
+    Cuando intenta registrar una reservación en "Sala A" para 5 asistentes                    # features/steps/reservacion_steps.py:207
+    Cuando intenta registrar una reservación en "Sala A" para 5 asistentes                    # features/steps/reservacion_steps.py:207 0.170s
+    Entonces el sistema no registra la reservación por validación                             # features/steps/reservacion_steps.py:383
+    Entonces el sistema no registra la reservación por validación                             # features/steps/reservacion_steps.py:383 0.000s
+    Y muestra un mensaje indicando que el número de asistentes supera la capacidad de la sala # features/steps/reservacion_steps.py:399
+    Y muestra un mensaje indicando que el número de asistentes supera la capacidad de la sala # features/steps/reservacion_steps.py:399 0.010s
+
+  Esquema del escenario: CA-04 Rechazar una fecha u horario inválidos -- @1.1          # features/reservaciones.feature:40
+    Dado que el usuario "propietario" ha iniciado sesión                               # features/steps/autenticacion_steps.py:15
+    Dado que el usuario "propietario" ha iniciado sesión                               # features/steps/autenticacion_steps.py:15 0.235s
+    Cuando intenta reservar "Sala A" con fecha "pasada", inicio "10:00" y fin "11:00"  # features/steps/reservacion_steps.py:233
+    Cuando intenta reservar "Sala A" con fecha "pasada", inicio "10:00" y fin "11:00"  # features/steps/reservacion_steps.py:233 0.174s
+    Entonces el sistema no registra la reservación por validación                      # features/steps/reservacion_steps.py:383
+    Entonces el sistema no registra la reservación por validación                      # features/steps/reservacion_steps.py:383 0.000s
+    Y muestra el mensaje de validación "La fecha no puede ser anterior al día actual." # features/steps/reservacion_steps.py:409
+    Y muestra el mensaje de validación "La fecha no puede ser anterior al día actual." # features/steps/reservacion_steps.py:409 0.009s
+
+  Esquema del escenario: CA-04 Rechazar una fecha u horario inválidos -- @1.2                   # features/reservaciones.feature:41
+    Dado que el usuario "propietario" ha iniciado sesión                                        # features/steps/autenticacion_steps.py:15
+    Dado que el usuario "propietario" ha iniciado sesión                                        # features/steps/autenticacion_steps.py:15 0.263s
+    Cuando intenta reservar "Sala A" con fecha "futura", inicio "11:00" y fin "10:00"           # features/steps/reservacion_steps.py:233
+    Cuando intenta reservar "Sala A" con fecha "futura", inicio "11:00" y fin "10:00"           # features/steps/reservacion_steps.py:233 0.183s
+    Entonces el sistema no registra la reservación por validación                               # features/steps/reservacion_steps.py:383
+    Entonces el sistema no registra la reservación por validación                               # features/steps/reservacion_steps.py:383 0.000s
+    Y muestra el mensaje de validación "La hora de fin debe ser posterior a la hora de inicio." # features/steps/reservacion_steps.py:409
+    Y muestra el mensaje de validación "La hora de fin debe ser posterior a la hora de inicio." # features/steps/reservacion_steps.py:409 0.009s
+
+  Esquema del escenario: CA-04 Rechazar una fecha u horario inválidos -- @1.3                   # features/reservaciones.feature:42
+    Dado que el usuario "propietario" ha iniciado sesión                                        # features/steps/autenticacion_steps.py:15
+    Dado que el usuario "propietario" ha iniciado sesión                                        # features/steps/autenticacion_steps.py:15 0.252s
+    Cuando intenta reservar "Sala A" con fecha "futura", inicio "10:00" y fin "10:00"           # features/steps/reservacion_steps.py:233
+    Cuando intenta reservar "Sala A" con fecha "futura", inicio "10:00" y fin "10:00"           # features/steps/reservacion_steps.py:233 0.193s
+    Entonces el sistema no registra la reservación por validación                               # features/steps/reservacion_steps.py:383
+    Entonces el sistema no registra la reservación por validación                               # features/steps/reservacion_steps.py:383 0.000s
+    Y muestra el mensaje de validación "La hora de fin debe ser posterior a la hora de inicio." # features/steps/reservacion_steps.py:409
+    Y muestra el mensaje de validación "La hora de fin debe ser posterior a la hora de inicio." # features/steps/reservacion_steps.py:409 0.009s
+
+  Escenario: CA-05 Rechazar una sala inactiva                                              # features/reservaciones.feature:44
+    Dado que existe la sala marcada como inactiva "Sala de mantenimiento"                  # features/steps/reservacion_steps.py:127
+    Dado que existe la sala marcada como inactiva "Sala de mantenimiento"                  # features/steps/reservacion_steps.py:127 0.000s
+    Y el usuario "propietario" ha iniciado sesión                                          # features/steps/autenticacion_steps.py:15
+    Y el usuario "propietario" ha iniciado sesión                                          # features/steps/autenticacion_steps.py:15 0.263s
+    Cuando intenta registrar una reservación forzando la sala inactiva desde la interfaz   # features/steps/reservacion_steps.py:264
+    Cuando intenta registrar una reservación forzando la sala inactiva desde la interfaz   # features/steps/reservacion_steps.py:264 0.157s
+    Entonces el sistema no registra la reservación por validación                          # features/steps/reservacion_steps.py:383
+    Entonces el sistema no registra la reservación por validación                          # features/steps/reservacion_steps.py:383 0.000s
+    Y muestra un mensaje indicando que la sala no se encuentra disponible para reservación # features/steps/reservacion_steps.py:416
+    Y muestra un mensaje indicando que la sala no se encuentra disponible para reservación # features/steps/reservacion_steps.py:416 0.010s
+
+  Escenario: CA-06 Evitar una doble reservación ante solicitudes concurrentes                          # features/reservaciones.feature:51
+    Dado que la sala "Sala A" está disponible para un horario específico                               # features/steps/reservacion_steps.py:135
+    Dado que la sala "Sala A" está disponible para un horario específico                               # features/steps/reservacion_steps.py:135 0.000s
+    Cuando dos sesiones de navegador intentan registrar simultáneamente la misma sala y horario        # features/steps/reservacion_steps.py:299
+Not Found: /favicon.ico
+    Cuando dos sesiones de navegador intentan registrar simultáneamente la misma sala y horario        # features/steps/reservacion_steps.py:299 3.513s
+    Entonces solo una reservación queda registrada como vigente                                        # features/steps/reservacion_steps.py:426
+    Entonces solo una reservación queda registrada como vigente                                        # features/steps/reservacion_steps.py:426 0.001s
+    Y la segunda solicitud recibe una respuesta controlada indicando que la sala ya no está disponible # features/steps/reservacion_steps.py:436
+    Y la segunda solicitud recibe una respuesta controlada indicando que la sala ya no está disponible # features/steps/reservacion_steps.py:436 0.000s
+
+2 features passed, 0 failed, 0 skipped
+13 scenarios passed, 0 failed, 0 skipped
+69 steps passed, 0 failed, 0 skipped
+Took 0min 9.294s
