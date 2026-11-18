@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+
+{% block title %}Confirmar Cancelación{% endblock %}
+
+{% block content %}
+<div style="max-width: 580px; margin: 1rem auto;">
+    <div class="card">
+        <div class="page-header">
+            <div>
+                <h1 id="titulo-confirmar-cancelacion">Confirmar Cancelación de Reservación</h1>
+                <p class="page-subtitle">Al cancelar, el horario quedará libre para otros estudiantes y la reservación pasará a tu historial.</p>
+            </div>
+        </div>
+
+        <ul id="resumen-cancelacion" style="list-style: none; padding: 1rem 1.25rem; background: #f8fafc; border: 1px solid var(--color-border); border-radius: 8px; margin-bottom: 1.5rem;">
+            <li style="margin-bottom: 0.5rem;"><strong>Sala:</strong> {{ reservacion.sala.nombre }} ({{ reservacion.sala.ubicacion }})</li>
+            <li style="margin-bottom: 0.5rem;"><strong>Fecha:</strong> {{ reservacion.fecha|date:"Y-m-d" }}</li>
+            <li style="margin-bottom: 0.5rem;">
+                <strong>Horario:</strong>
+                {{ reservacion.hora_inicio|time:"H:i" }} - {{ reservacion.hora_fin|time:"H:i" }}
+            </li>
+            <li style="margin-bottom: 0.5rem;"><strong>Asistentes:</strong> {{ reservacion.asistentes }}</li>
+            <li style="margin-bottom: 0.5rem;"><strong>Propósito:</strong> {{ reservacion.proposito }}</li>
+            <li><strong>Estado actual:</strong> <span class="badge badge-vigente">{{ reservacion.estado }}</span></li>
+        </ul>
+
+        <form id="form-confirmar-cancelacion-{{ reservacion.id }}"
+              method="post"
+              action="{% url 'reservaciones:cancelar' reservacion.id %}"
+              style="display: flex; gap: 0.75rem;">
+            {% csrf_token %}
+            <button id="btn-confirmar-cancelacion" type="submit" class="btn btn-danger">
+                Confirmar cancelación
+            </button>
+            <a id="btn-volver-listado" href="{% url 'reservaciones:lista' %}" class="btn btn-secondary">
+                Volver al listado
+            </a>
+        </form>
+    </div>
+</div>
+{% endblock %}

@@ -1,18 +1,85 @@
-<!-- # TEMPORAL: reemplazar por Persona 2 -->
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="utf-8">
-    <title>Mis Reservaciones</title>
-</head>
-<body>
-    <h1>Mis Reservaciones</h1>
-    {% if messages %}
-    <ul class="messages">
-        {% for message in messages %}
-        <li>{{ message }}</li>
-        {% endfor %}
-    </ul>
+{% extends "base.html" %}
+
+{% block title %}Mis Reservaciones{% endblock %}
+
+{% block content %}
+<div class="card">
+    <div class="page-header">
+        <div>
+            <h1 id="titulo-mis-reservaciones">Mis Reservaciones e Historial</h1>
+            <p class="page-subtitle">Consulta tus reservaciones vigentes y el registro histórico de cancelaciones.</p>
+        </div>
+        <a id="btn-ir-nueva-reservacion" href="{% url 'reservaciones:nueva' %}" class="btn btn-primary">
+            + Nueva Reservación
+        </a>
+    </div>
+
+    {% if reservaciones %}
+        <div class="table-wrapper">
+            <table id="tabla-reservaciones">
+                <thead>
+                    <tr>
+                        <th>Sala</th>
+                        <th>Fecha</th>
+                        <th>Horario</th>
+                        <th>Asistentes</th>
+                        <th>Propósito</th>
+                        <th>Estado</th>
+                        <th>Fecha de Cancelación</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for r in reservaciones %}
+                        <tr id="reserva-fila-{{ r.id }}">
+                            <td id="reserva-sala-{{ r.id }}">
+                                <strong>{{ r.sala.nombre }}</strong>
+                                <div style="font-size: 0.78rem; color: var(--color-muted);">{{ r.sala.ubicacion }}</div>
+                            </td>
+                            <td id="reserva-fecha-{{ r.id }}">{{ r.fecha|date:"Y-m-d" }}</td>
+                            <td id="reserva-horario-{{ r.id }}">
+                                <code>{{ r.hora_inicio|time:"H:i" }} - {{ r.hora_fin|time:"H:i" }}</code>
+                            </td>
+                            <td id="reserva-asistentes-{{ r.id }}">{{ r.asistentes }} pers.</td>
+                            <td id="reserva-proposito-{{ r.id }}">{{ r.proposito }}</td>
+                            <td id="reserva-estado-{{ r.id }}">
+                                <span class="badge {% if r.estado == 'VIGENTE' %}badge-vigente{% else %}badge-cancelada{% endif %}">
+                                    {{ r.estado }}
+                                </span>
+                            </td>
+                            <td id="reserva-fecha-cancelacion-{{ r.id }}" style="font-size: 0.85rem; color: var(--color-muted);">
+                                {% if r.fecha_cancelacion %}
+                                    {{ r.fecha_cancelacion|date:"Y-m-d H:i" }}
+                                {% else %}
+                                    —
+                                {% endif %}
+                            </td>
+                            <td id="reserva-acciones-{{ r.id }}">
+                                {% if r.puede_cancelarse %}
+                                    <a id="btn-solicitar-cancelar-{{ r.id }}"
+                                       href="{% url 'reservaciones:confirmar_cancelacion' r.id %}"
+                                       class="btn btn-danger"
+                                       style="padding: 0.4rem 0.85rem; font-size: 0.84rem;">
+                                        Cancelar
+                                    </a>
+                                {% else %}
+                                    <span style="font-size: 0.8rem; color: var(--color-muted);">No disponible</span>
+                                {% endif %}
+                            </td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    {% else %}
+        <div id="sin-reservaciones" style="text-align: center; padding: 3rem 1rem;">
+            <p style="font-size: 1.05rem; color: var(--color-muted); margin-bottom: 1.25rem;">
+                Aún no tienes reservaciones registradas en tu historial.
+            </p>
+            <a href="{% url 'reservaciones:nueva' %}" class="btn btn-primary">
+                Registrar mi primera reservación
+            </a>
+        </div>
     {% endif %}
-</body>
-</html>
+</div>
+{% endblock %}
